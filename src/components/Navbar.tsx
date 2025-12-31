@@ -31,6 +31,10 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   }, [location]);
 
+  // Determine text color based on scroll state
+  const textColorClass = isScrolled ? "text-foreground" : "text-creme";
+  const mutedTextColorClass = isScrolled ? "text-muted-foreground" : "text-creme/70";
+
   return (
     <>
       <motion.header
@@ -53,10 +57,10 @@ const Navbar = () => {
                 </span>
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-xl font-serif font-semibold text-foreground">
+                <h1 className={`text-xl font-serif font-semibold transition-colors duration-300 ${textColorClass}`}>
                   Patel Fabrication
                 </h1>
-                <p className="text-xs text-muted-foreground tracking-wider uppercase">
+                <p className={`text-xs tracking-wider uppercase transition-colors duration-300 ${mutedTextColorClass}`}>
                   Engineering Excellence
                 </p>
               </div>
@@ -68,8 +72,10 @@ const Navbar = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`nav-link text-sm font-medium uppercase tracking-wide ${
-                    location.pathname === link.path ? "active text-primary" : ""
+                  className={`text-sm font-medium uppercase tracking-wide transition-colors duration-300 hover:text-primary ${
+                    location.pathname === link.path 
+                      ? "text-primary" 
+                      : textColorClass
                   }`}
                 >
                   {link.name}
@@ -81,7 +87,7 @@ const Navbar = () => {
             <div className="flex items-center gap-4">
               <a
                 href="tel:+919876543210"
-                className="hidden md:flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                className={`hidden md:flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors duration-300 ${textColorClass}`}
               >
                 <Phone className="w-4 h-4" />
                 <span>+91 98765 43210</span>
@@ -94,7 +100,7 @@ const Navbar = () => {
               </Link>
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-foreground"
+                className={`lg:hidden p-2 transition-colors duration-300 ${textColorClass}`}
                 aria-label="Toggle menu"
               >
                 {isMobileMenuOpen ? (
