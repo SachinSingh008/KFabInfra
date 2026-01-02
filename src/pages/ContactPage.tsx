@@ -339,14 +339,14 @@ const ContactPage = () => {
       {/* Map */}
       <section className="h-96 bg-muted">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30284.91893561747!2d74.12!3d18.27!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9e89c2a9f4d%3A0x5b25c67c08c0d4e!2sJejuri%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2176.5330250195757!2d74.17929101090944!3d18.26762901272173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2fdbb24dcfc27%3A0x5ebcfb7a1250294a!2sKumar%20Fabricators!5e1!3m2!1sen!2sin!4v1767363637833!5m2!1sen!2sin"
           width="100%"
           height="100%"
           style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Location map - Jejuri, Pune"
+          title="Kumar Fabricators Location"
         />
       </section>
 
