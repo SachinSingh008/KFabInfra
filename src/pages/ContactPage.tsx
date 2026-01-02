@@ -346,7 +346,7 @@ const ContactPage = () => {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Kumar Fabricators Location"
+          title="KFab Infra Project PVT LTD"
         />
       </section>
 

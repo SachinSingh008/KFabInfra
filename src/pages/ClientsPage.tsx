@@ -20,17 +20,17 @@ const clients = [
 
 const testimonials = [
   {
-    quote: "Kumar Fabricators has been our trusted partner for years. Their precision engineering and commitment to quality have consistently exceeded our expectations.",
+    quote: "KFab Infra Project PVT LTD has been our trusted partner for years. Their precision engineering and commitment to quality have consistently exceeded our expectations.",
     author: "Industrial Partner",
     title: "Indiana Gratings Pvt. Ltd.",
   },
   {
-    quote: "The team at Kumar Fabricators delivered our metro rail girders ahead of schedule without compromising on quality. Their professionalism is commendable.",
+    quote: "The team at KFab Infra Project PVT LTD delivered our metro rail girders ahead of schedule without compromising on quality. Their professionalism is commendable.",
     author: "Project Manager",
     title: "WMI Cranes Ltd.",
   },
   {
-    quote: "We rely on Kumar Fabricators for critical components. Their understanding of our requirements and technical expertise is unmatched in the industry.",
+    quote: "We rely on  KFab Infra Project PVT LTD for critical components. Their understanding of our requirements and technical expertise is unmatched in the industry.",
     author: "Operations Head",
     title: "Thermax Ltd.",
   },

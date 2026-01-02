@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Target, Eye, Heart, Users, Award, Zap } from "lucide-react";
 
 const milestones = [
-  { year: "2004", title: "Foundation", description: "Kumar Fabricators established in Jejuri, Pune" },
+  { year: "2004", title: "Foundation", description: "KFab Infra Project PVT LTD established in Jejuri, Pune" },
   { year: "2008", title: "Expansion", description: "Doubled capacity with new machinery" },
   { year: "2013", title: "Major Projects", description: "Started serving metro & railway sectors" },
   { year: "2018", title: "Milestone", description: "Completed 300+ industrial projects" },
@@ -94,7 +94,7 @@ const AboutPage = () => {
                 Our Story
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Founded in 2004 by visionary engineers, Kumar Fabricators began
+                Founded in 2004 by visionary engineers,  KFab Infra Project PVT LTDrs began
                 as a focused workshop with a big dream – to deliver world-class heavy
                 fabrication solutions that power India's industrial growth.
               </p>

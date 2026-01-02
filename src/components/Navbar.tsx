@@ -58,7 +58,7 @@ const Navbar = () => {
               </div>
               <div className="hidden sm:block">
                 <h1 className={`text-xl font-serif font-semibold transition-colors duration-300 ${textColorClass}`}>
-                  Kumar Fabricators
+                  KFab Infra Project PVT LTD
                 </h1>
                 <p className={`text-xs tracking-wider uppercase transition-colors duration-300 ${mutedTextColorClass}`}>
                   Heavy Machinery & Equipment

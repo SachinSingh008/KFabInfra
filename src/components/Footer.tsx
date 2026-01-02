@@ -45,7 +45,7 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="text-xl font-serif font-semibold">
-                  Kumar Fabricators
+                  KFab Infra Project PVT LTD
                 </h3>
                 <p className="text-xs text-creme/60 tracking-wider uppercase">
                   Heavy Machinery & Equipment
@@ -144,7 +144,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-creme/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-creme/50 text-sm">
-            © {new Date().getFullYear()} Kumar Fabricators. All rights
+            © {new Date().getFullYear()}  KFab Infra Project PVT LTD. All rights
             reserved.
           </p>
           <div className="flex items-center gap-6">

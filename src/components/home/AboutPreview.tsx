@@ -40,7 +40,7 @@ const AboutPreview = () => {
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Established in 2004 with a vision to deliver world-class fabrication solutions,
-              Kumar Fabricators has grown into one of Maharashtra's most trusted
+              KFab Infra Project PVT LTD has grown into one of Maharashtra's most trusted
               names in heavy industrial manufacturing. Our expertise spans across
               sugar processing equipment, metro & railway infrastructure, and industrial
               storage solutions.
