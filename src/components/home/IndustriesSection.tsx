@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Wheat, Building2, FileText, FlaskConical, Factory, Truck } from "lucide-react";
+import { Wheat, Building2, FileText, FlaskConical, Factory, Truck, HardHat, Package } from "lucide-react";
 import SectionHeader from "../SectionHeader";
 import { StaggerContainer, StaggerItem } from "../StaggerContainer";
 
@@ -30,9 +30,19 @@ const industries = [
     description: "Custom solutions for diverse industries",
   },
   {
+    icon: HardHat,
+    name: "Construction",
+    description: "Structural components for construction",
+  },
+  {
     icon: Truck,
     name: "Logistics",
     description: "Material handling equipment",
+  },
+  {
+    icon: Package,
+    name: "Handling Equipment",
+    description: "Industrial handling solutions",
   },
 ];
 
@@ -56,7 +66,7 @@ const IndustriesSection = () => {
           light
         />
 
-        <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
           {industries.map((industry, index) => (
             <StaggerItem key={index}>
               <motion.div

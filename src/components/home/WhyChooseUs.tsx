@@ -5,40 +5,40 @@ import ScrollReveal from "../ScrollReveal";
 
 const features = [
   {
-    icon: Shield,
-    title: "Quality Assurance",
-    description:
-      "Rigorous quality control at every stage ensures products that exceed industry standards",
-  },
-  {
-    icon: Clock,
-    title: "On-Time Delivery",
-    description:
-      "Proven track record of meeting deadlines without compromising on quality",
-  },
-  {
     icon: Award,
-    title: "Expert Craftsmanship",
+    title: "20+ Years Experience",
     description:
-      "Skilled technicians with decades of experience in heavy fabrication",
-  },
-  {
-    icon: Users,
-    title: "Client Partnership",
-    description:
-      "Collaborative approach ensuring solutions tailored to your specific needs",
-  },
-  {
-    icon: CheckCircle,
-    title: "Full Compliance",
-    description:
-      "Adherence to all safety standards and industrial regulations",
+      "Extensive industry experience with deep knowledge and expertise in heavy fabrication",
   },
   {
     icon: Wrench,
-    title: "Custom Solutions",
+    title: "Customized Solutions",
     description:
-      "Bespoke engineering for unique industrial challenges",
+      "Tailored fabrication solutions designed for your specific requirements",
+  },
+  {
+    icon: Shield,
+    title: "Quality Assurance",
+    description:
+      "Stringent quality control measures with high-grade materials at every stage",
+  },
+  {
+    icon: Clock,
+    title: "Timely Delivery",
+    description:
+      "Commitment to agreed-upon project deadlines without compromising quality",
+  },
+  {
+    icon: Users,
+    title: "Skilled Workforce",
+    description:
+      "8 specialized departments with welders, engineers, fitters & more",
+  },
+  {
+    icon: CheckCircle,
+    title: "Long-term Partnerships",
+    description:
+      "Building trusted relationships with clients across India",
   },
 ];
 

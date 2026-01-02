@@ -40,43 +40,44 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-sm bg-primary flex items-center justify-center">
                 <span className="text-2xl font-serif font-bold text-charcoal">
-                  P
+                  K
                 </span>
               </div>
               <div>
                 <h3 className="text-xl font-serif font-semibold">
-                  Patel Fabrication
+                  Kumar Fabricators
                 </h3>
                 <p className="text-xs text-creme/60 tracking-wider uppercase">
-                  Engineering Excellence
+                  Heavy Machinery & Equipment
                 </p>
               </div>
             </div>
             <p className="text-creme/70 mb-6 max-w-sm leading-relaxed">
               With over 20 years of excellence in heavy fabrication, we deliver
-              precision-engineered solutions for industrial giants across India.
+              precision-engineered solutions for Sugar, Cement, Paper, Chemical
+              & Handling Equipment industries across India.
             </p>
             <div className="space-y-3">
               <a
-                href="tel:+919876543210"
+                href="tel:+919881309872"
                 className="flex items-center gap-3 text-creme/70 hover:text-primary transition-colors"
               >
                 <Phone className="w-4 h-4 text-primary" />
-                <span>+91 98765 43210</span>
+                <span>+91 98813 09872</span>
               </a>
               <a
-                href="mailto:info@patelfabrication.com"
+                href="mailto:kumarfabricators4@gmail.com"
                 className="flex items-center gap-3 text-creme/70 hover:text-primary transition-colors"
               >
                 <Mail className="w-4 h-4 text-primary" />
-                <span>info@patelfabrication.com</span>
+                <span>kumarfabricators4@gmail.com</span>
               </a>
               <div className="flex items-start gap-3 text-creme/70">
                 <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
                 <span>
-                  Industrial Area, Phase II,
+                  C-46, M.I.D.C, Jejuri,
                   <br />
-                  Ahmedabad, Gujarat 382445
+                  Pune, Maharashtra 412303
                 </span>
               </div>
             </div>
@@ -143,7 +144,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-creme/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-creme/50 text-sm">
-            © {new Date().getFullYear()} Patel Fabrication Works. All rights
+            © {new Date().getFullYear()} Kumar Fabricators. All rights
             reserved.
           </p>
           <div className="flex items-center gap-6">

@@ -2,18 +2,16 @@ import { motion } from "framer-motion";
 import SectionHeader from "../SectionHeader";
 
 const clients = [
-  "Gujarat Sugar Mills",
-  "National Cement Corp",
-  "Bharat Paper Industries",
-  "Krishna Chemicals",
-  "Patel Manufacturing",
-  "Western Railway",
-  "Gujarat Metro Rail",
-  "Adani Group",
-  "Ambuja Cements",
-  "UltraTech",
-  "Dalmia Bharat",
-  "Shree Cement",
+  "Indiana Gratings Pvt. Ltd.",
+  "Indiana Conveyor Pvt. Ltd.",
+  "WMI Cranes Ltd.",
+  "Global Steels Hyderabad",
+  "Kushwaha Industries",
+  "Consolidated Hoist Pvt. Ltd.",
+  "TOWELL Engineering Int. LLP",
+  "Crossworld Industries",
+  "General Energy Management System Pvt. Ltd.",
+  "Thermax Ltd.",
 ];
 
 const ClientsMarquee = () => {

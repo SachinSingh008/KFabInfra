@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, User } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const contactSchema = z.object({
@@ -28,8 +28,17 @@ const services = [
   "Plant Sheds",
   "Gratings & Frames",
   "Hoppers & Rollers",
+  "Calandria",
   "Rolling Works",
+  "Dish-end Tanks",
   "Other",
+];
+
+const contactPersons = [
+  { name: "Pramod Kumar Singh", phone: "9881309872" },
+  { name: "Ajeet Kumar Singh", phone: "9922427381" },
+  { name: "Abhishek Kumar Singh", phone: "9561008389" },
+  { name: "Ritesh Kumar Singh", phone: "7709170075" },
 ];
 
 const ContactPage = () => {
@@ -119,8 +128,8 @@ const ContactPage = () => {
                     <div>
                       <h4 className="font-semibold mb-1">Address</h4>
                       <p className="text-muted-foreground text-sm">
-                        Industrial Area, Phase II,<br />
-                        Ahmedabad, Gujarat 382445
+                        C-46, M.I.D.C, Jejuri,<br />
+                        Pune, Maharashtra 412303
                       </p>
                     </div>
                   </div>
@@ -131,19 +140,17 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Phone</h4>
-                      <a
-                        href="tel:+919876543210"
-                        className="text-muted-foreground text-sm hover:text-primary transition-colors"
-                      >
-                        +91 98765 43210
-                      </a>
-                      <br />
-                      <a
-                        href="tel:+917912345678"
-                        className="text-muted-foreground text-sm hover:text-primary transition-colors"
-                      >
-                        +91 79 1234 5678
-                      </a>
+                      {contactPersons.map((person, index) => (
+                        <div key={index} className="mb-2">
+                          <span className="text-muted-foreground text-sm block">{person.name}</span>
+                          <a
+                            href={`tel:+91${person.phone}`}
+                            className="text-foreground text-sm hover:text-primary transition-colors font-medium"
+                          >
+                            +91 {person.phone}
+                          </a>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
@@ -154,17 +161,16 @@ const ContactPage = () => {
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
                       <a
-                        href="mailto:info@patelfabrication.com"
-                        className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                        href="mailto:kumarfabricators4@gmail.com"
+                        className="text-muted-foreground text-sm hover:text-primary transition-colors block"
                       >
-                        info@patelfabrication.com
+                        kumarfabricators4@gmail.com
                       </a>
-                      <br />
                       <a
-                        href="mailto:sales@patelfabrication.com"
-                        className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                        href="mailto:acckumarfabricators4@gmail.com"
+                        className="text-muted-foreground text-sm hover:text-primary transition-colors block"
                       >
-                        sales@patelfabrication.com
+                        acckumarfabricators4@gmail.com
                       </a>
                     </div>
                   </div>
@@ -238,7 +244,7 @@ const ContactPage = () => {
                           {...register("phone")}
                           type="tel"
                           className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                          placeholder="+91 98765 43210"
+                          placeholder="+91 98813 09872"
                         />
                         {errors.phone && (
                           <p className="text-destructive text-sm mt-1">
@@ -333,14 +339,14 @@ const ContactPage = () => {
       {/* Map */}
       <section className="h-96 bg-muted">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234579.37019571!2d72.41493065!3d23.02045745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30284.91893561747!2d74.12!3d18.27!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9e89c2a9f4d%3A0x5b25c67c08c0d4e!2sJejuri%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin"
           width="100%"
           height="100%"
           style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Location map"
+          title="Location map - Jejuri, Pune"
         />
       </section>
 
