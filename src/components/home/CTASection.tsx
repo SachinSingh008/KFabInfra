@@ -49,7 +49,7 @@ const CTASection = () => {
               className="inline-flex items-center gap-3 px-8 py-3 text-creme font-medium hover:text-primary transition-colors"
             >
               <Phone className="w-5 h-5" />
-              <span>Call +91 98765 43210</span>
+              <span>Call +91 99224 27381</span>
             </a>
           </div>
         </motion.div>

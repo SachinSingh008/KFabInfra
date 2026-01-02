@@ -90,7 +90,7 @@ const Navbar = () => {
                 className={`hidden md:flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors duration-300 ${textColorClass}`}
               >
                 <Phone className="w-4 h-4" />
-                <span>+91 98813 09872</span>
+                <span>+91 99224 27381</span>
               </a>
               <Link
                 to="/contact"

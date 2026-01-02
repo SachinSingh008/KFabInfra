@@ -244,7 +244,7 @@ const ContactPage = () => {
                           {...register("phone")}
                           type="tel"
                           className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                          placeholder="+91 98813 09872"
+                          placeholder="+91 99224 27381"
                         />
                         {errors.phone && (
                           <p className="text-destructive text-sm mt-1">
