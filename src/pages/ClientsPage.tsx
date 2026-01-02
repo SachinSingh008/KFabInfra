@@ -6,39 +6,33 @@ import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
 const clients = [
-  "Gujarat Sugar Mills",
-  "National Cement Corp",
-  "Bharat Paper Industries",
-  "Krishna Chemicals Ltd",
-  "Patel Manufacturing Co",
-  "Western Railway",
-  "Gujarat Metro Rail Corp",
-  "Adani Group",
-  "Ambuja Cements",
-  "UltraTech Cement",
-  "Dalmia Bharat",
-  "Shree Cement Ltd",
-  "JK Lakshmi Cement",
-  "ACC Limited",
-  "Birla Corporation",
-  "Reliance Industries",
+  "Indiana Gratings Pvt. Ltd.",
+  "Indiana Conveyor Pvt. Ltd.",
+  "WMI Cranes Ltd.",
+  "Global Steels Hyderabad",
+  "Kushwaha Industries",
+  "Consolidated Hoist Pvt. Ltd.",
+  "TOWELL Engineering Int. LLP",
+  "Crossworld Industries",
+  "General Energy Management System Pvt. Ltd.",
+  "Thermax Ltd.",
 ];
 
 const testimonials = [
   {
-    quote: "Patel Fabrication has been our trusted partner for over a decade. Their precision engineering and commitment to quality have consistently exceeded our expectations.",
-    author: "Rajesh Mehta",
-    title: "Plant Manager, Gujarat Sugar Mills",
+    quote: "Kumar Fabricators has been our trusted partner for years. Their precision engineering and commitment to quality have consistently exceeded our expectations.",
+    author: "Industrial Partner",
+    title: "Indiana Gratings Pvt. Ltd.",
   },
   {
-    quote: "The team at Patel Fabrication delivered our metro rail girders ahead of schedule without compromising on quality. Their professionalism is commendable.",
-    author: "Suresh Patel",
-    title: "Project Director, Gujarat Metro Rail",
+    quote: "The team at Kumar Fabricators delivered our metro rail girders ahead of schedule without compromising on quality. Their professionalism is commendable.",
+    author: "Project Manager",
+    title: "WMI Cranes Ltd.",
   },
   {
-    quote: "We rely on Patel Fabrication for critical components in our cement plant. Their understanding of our requirements and technical expertise is unmatched.",
-    author: "Vikram Singh",
-    title: "Operations Head, National Cement Corp",
+    quote: "We rely on Kumar Fabricators for critical components. Their understanding of our requirements and technical expertise is unmatched in the industry.",
+    author: "Operations Head",
+    title: "Thermax Ltd.",
   },
 ];
 
@@ -86,7 +80,7 @@ const ClientsPage = () => {
             subtitle="Partnering with organizations that drive India's industrial growth"
           />
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {clients.map((client, index) => (
               <ScrollReveal key={index} delay={index * 0.05}>
                 <motion.div
@@ -143,7 +137,7 @@ const ClientsPage = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "50+", label: "Active Clients" },
+              { value: "10+", label: "Trusted Clients" },
               { value: "500+", label: "Projects Delivered" },
               { value: "95%", label: "Repeat Business" },
               { value: "20+", label: "Years Trust" },

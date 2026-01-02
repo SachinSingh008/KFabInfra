@@ -15,18 +15,25 @@ const services = [
     features: ["Custom capacities", "Corrosion resistant", "Easy maintenance"],
   },
   {
-    slug: "metro-railway-girders",
-    title: "Metro & Railway Girders",
-    description: "Precision-fabricated structural girders for metro systems and railways, meeting stringent safety and load-bearing specifications.",
+    slug: "metro-girders",
+    title: "Metro Girders",
+    description: "Precision-fabricated structural girders for metro systems, meeting stringent safety and load-bearing specifications.",
     image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80",
     features: ["Load-tested", "Precision welding", "Certified quality"],
   },
   {
-    slug: "silo-tanks",
-    title: "Silo & Storage Tanks",
-    description: "Complete range of storage solutions including conical, vertical, and frustum tanks for cement, grain, and industrial materials.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80",
-    features: ["Multiple configurations", "Weatherproof", "Large capacity"],
+    slug: "railway-girders",
+    title: "Railway Girders",
+    description: "Heavy-duty railway girders and structural components for rail infrastructure projects across India.",
+    image: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&q=80",
+    features: ["Railway certified", "High load capacity", "Durable construction"],
+  },
+  {
+    slug: "spherical-shed",
+    title: "Spherical Shed",
+    description: "Innovative spherical shed designs for unique storage and industrial requirements.",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80",
+    features: ["Unique design", "Space efficient", "Weather resistant"],
   },
   {
     slug: "underground-diesel-tanks",
@@ -36,25 +43,32 @@ const services = [
     features: ["Double-walled", "Leak detection", "Long lifespan"],
   },
   {
-    slug: "plant-sheds",
-    title: "Plant & Spherical Sheds",
-    description: "Custom industrial sheds and structures, including innovative spherical designs for unique storage requirements.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80",
-    features: ["Custom spans", "Weather resistant", "Quick installation"],
+    slug: "frustum-silo",
+    title: "Frustum Silo",
+    description: "Specialized frustum-shaped silos for efficient material storage and discharge.",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80",
+    features: ["Efficient flow", "Custom sizes", "Robust design"],
   },
   {
-    slug: "gratings-frames",
-    title: "Gratings & Frames",
-    description: "Industrial-grade gratings and structural frames for walkways, platforms, and machinery support systems.",
-    image: "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=600&q=80",
-    features: ["Anti-slip surface", "Heavy load capacity", "Modular design"],
+    slug: "conical-silo",
+    title: "Conical Silo",
+    description: "Conical silos designed for optimal material flow and storage efficiency.",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80",
+    features: ["Gravity discharge", "Large capacity", "Weatherproof"],
   },
   {
-    slug: "hoppers-rollers",
-    title: "Hoppers & Rollers",
-    description: "Material handling hoppers and industrial rollers for manufacturing and processing facilities.",
+    slug: "sugarcane-silos",
+    title: "Sugarcane Silos",
+    description: "Purpose-built silos for sugarcane and related material storage in sugar mills.",
+    image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80",
+    features: ["Sugar industry spec", "Easy cleaning", "Durable"],
+  },
+  {
+    slug: "roller",
+    title: "Rollers",
+    description: "Industrial rollers for material handling and manufacturing processes.",
     image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebb6122?w=600&q=80",
-    features: ["Wear resistant", "Custom angles", "Easy cleaning"],
+    features: ["Wear resistant", "Precision balanced", "Custom specs"],
   },
   {
     slug: "calandria",
@@ -64,18 +78,88 @@ const services = [
     features: ["Efficient heat transfer", "Tube arrangement", "Durable construction"],
   },
   {
-    slug: "gallery-structures",
+    slug: "gratings-frame",
+    title: "Gratings & Frames",
+    description: "Industrial-grade gratings and structural frames for walkways, platforms, and machinery support systems.",
+    image: "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=600&q=80",
+    features: ["Anti-slip surface", "Heavy load capacity", "Modular design"],
+  },
+  {
+    slug: "catchall",
+    title: "Catchall",
+    description: "Specialized catchall systems for industrial material collection and handling.",
+    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebb6122?w=600&q=80",
+    features: ["Custom design", "Easy access", "Durable build"],
+  },
+  {
+    slug: "silo-with-base",
+    title: "Silo with Base",
+    description: "Complete silo systems with integrated base structures for stability and easy installation.",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80",
+    features: ["Integrated base", "Quick setup", "Stable design"],
+  },
+  {
+    slug: "plant-shed",
+    title: "Plant Shed",
+    description: "Custom industrial plant sheds for manufacturing and storage facilities.",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80",
+    features: ["Custom spans", "Weather resistant", "Quick installation"],
+  },
+  {
+    slug: "connector",
+    title: "Connectors",
+    description: "Structural connectors and joining components for industrial assemblies.",
+    image: "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=600&q=80",
+    features: ["High strength", "Precision fit", "Corrosion resistant"],
+  },
+  {
+    slug: "hopper",
+    title: "Hoppers",
+    description: "Material handling hoppers for manufacturing and processing facilities.",
+    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebb6122?w=600&q=80",
+    features: ["Wear resistant", "Custom angles", "Easy cleaning"],
+  },
+  {
+    slug: "tanks",
+    title: "Tanks",
+    description: "Industrial storage tanks for various liquids and materials.",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
+    features: ["Multiple sizes", "Pressure rated", "Long lifespan"],
+  },
+  {
+    slug: "gallery-structure",
     title: "Gallery Structures",
     description: "Elevated walkways and gallery structures for industrial facilities, ensuring safe access and material transport.",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80",
     features: ["Safety compliant", "Modular sections", "Heavy loads"],
   },
   {
-    slug: "dish-end-tanks",
-    title: "Dish End Tanks",
-    description: "Precision-formed dish ends and complete tank assemblies for pressure vessels and storage applications.",
-    image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80",
-    features: ["Pressure rated", "Various profiles", "Tight tolerances"],
+    slug: "silo-tanks",
+    title: "Silo Tanks",
+    description: "Combined silo and tank systems for versatile industrial storage needs.",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80",
+    features: ["Dual purpose", "Large capacity", "Efficient design"],
+  },
+  {
+    slug: "cuboidal-tanks",
+    title: "Cuboidal Tanks",
+    description: "Rectangular storage tanks optimized for space efficiency.",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
+    features: ["Space efficient", "Easy installation", "Stackable"],
+  },
+  {
+    slug: "metro-girders-assembly",
+    title: "Metro Girders Assembly",
+    description: "Complete metro girder assembly services including installation support.",
+    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80",
+    features: ["Full assembly", "Quality tested", "Installation support"],
+  },
+  {
+    slug: "vertical-tanks",
+    title: "Vertical Tanks",
+    description: "Vertical storage tanks for optimized footprint and gravity-fed systems.",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
+    features: ["Space saving", "Gravity feed", "Easy access"],
   },
   {
     slug: "rolling-works",
@@ -83,6 +167,13 @@ const services = [
     description: "Heavy metal plate rolling services for cylindrical, conical, and custom curved sections.",
     image: "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=600&q=80",
     features: ["Thick plates", "Precise radius", "Large diameters"],
+  },
+  {
+    slug: "dish-end-tanks",
+    title: "Dish-end Tanks",
+    description: "Precision-formed dish ends and complete tank assemblies for pressure vessels and storage applications.",
+    image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80",
+    features: ["Pressure rated", "Various profiles", "Tight tolerances"],
   },
 ];
 
@@ -115,8 +206,8 @@ const ServicesPage = () => {
               <span className="gold-text">Fabrication Services</span>
             </h1>
             <p className="text-lg text-creme/70 leading-relaxed">
-              Comprehensive heavy fabrication solutions engineered to meet the
-              demanding needs of modern industry.
+              Comprehensive heavy fabrication solutions for Sugar, Cement, Paper,
+              Chemical & Handling Equipment industries - 25+ specialized services.
             </p>
           </motion.div>
         </div>
@@ -125,7 +216,7 @@ const ServicesPage = () => {
       {/* Services Grid */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
-          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <StaggerItem key={index}>
                 <motion.div
@@ -133,7 +224,7 @@ const ServicesPage = () => {
                   className="card-premium group h-full overflow-hidden"
                 >
                   {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-40 overflow-hidden">
                     <img
                       src={service.image}
                       alt={service.title}
@@ -143,20 +234,20 @@ const ServicesPage = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-serif font-semibold mb-3 group-hover:text-primary transition-colors">
+                  <div className="p-5">
+                    <h3 className="text-lg font-serif font-semibold mb-2 group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                    <p className="text-xs text-muted-foreground mb-3 line-clamp-2">
                       {service.description}
                     </p>
 
                     {/* Features */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {service.features.map((feature, i) => (
+                    <div className="flex flex-wrap gap-1 mb-3">
+                      {service.features.slice(0, 2).map((feature, i) => (
                         <span
                           key={i}
-                          className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary"
+                          className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary"
                         >
                           {feature}
                         </span>

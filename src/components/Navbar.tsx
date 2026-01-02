@@ -51,17 +51,17 @@ const Navbar = () => {
           <nav className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-sm bg-primary flex items-center justify-center">
+            <div className="w-12 h-12 rounded-sm bg-primary flex items-center justify-center">
                 <span className="text-2xl font-serif font-bold text-primary-foreground">
-                  P
+                  K
                 </span>
               </div>
               <div className="hidden sm:block">
                 <h1 className={`text-xl font-serif font-semibold transition-colors duration-300 ${textColorClass}`}>
-                  Patel Fabrication
+                  Kumar Fabricators
                 </h1>
                 <p className={`text-xs tracking-wider uppercase transition-colors duration-300 ${mutedTextColorClass}`}>
-                  Engineering Excellence
+                  Heavy Machinery & Equipment
                 </p>
               </div>
             </Link>
@@ -86,11 +86,11 @@ const Navbar = () => {
             {/* CTA & Mobile Menu Toggle */}
             <div className="flex items-center gap-4">
               <a
-                href="tel:+919876543210"
+                href="tel:+919881309872"
                 className={`hidden md:flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors duration-300 ${textColorClass}`}
               >
                 <Phone className="w-4 h-4" />
-                <span>+91 98765 43210</span>
+                <span>+91 98813 09872</span>
               </a>
               <Link
                 to="/contact"

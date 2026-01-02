@@ -7,11 +7,11 @@ import { motion } from "framer-motion";
 import { Target, Eye, Heart, Users, Award, Zap } from "lucide-react";
 
 const milestones = [
-  { year: "2003", title: "Foundation", description: "Established with a vision for excellence" },
+  { year: "2004", title: "Foundation", description: "Kumar Fabricators established in Jejuri, Pune" },
   { year: "2008", title: "Expansion", description: "Doubled capacity with new machinery" },
-  { year: "2013", title: "ISO Certified", description: "Achieved ISO 9001:2015 certification" },
+  { year: "2013", title: "Major Projects", description: "Started serving metro & railway sectors" },
   { year: "2018", title: "Milestone", description: "Completed 300+ industrial projects" },
-  { year: "2023", title: "Innovation", description: "State-of-the-art facility upgrade" },
+  { year: "2024", title: "20 Years", description: "Celebrating two decades of excellence" },
 ];
 
 const values = [
@@ -19,6 +19,17 @@ const values = [
   { icon: Eye, title: "Integrity", description: "Transparent dealings and honest partnerships" },
   { icon: Heart, title: "Commitment", description: "Dedicated to exceeding client expectations" },
   { icon: Award, title: "Excellence", description: "Continuous pursuit of the highest standards" },
+];
+
+const workforceData = [
+  { role: "Helpers", percentage: 23 },
+  { role: "Welders", percentage: 17 },
+  { role: "Supervisors", percentage: 13 },
+  { role: "Engineers", percentage: 13 },
+  { role: "Painters", percentage: 10 },
+  { role: "Cutters", percentage: 9 },
+  { role: "Fitters", percentage: 8 },
+  { role: "Others", percentage: 7 },
 ];
 
 const AboutPage = () => {
@@ -30,7 +41,7 @@ const AboutPage = () => {
       <section className="pt-32 pb-20 bg-charcoal text-creme relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img
-            src="https://images.unsplash.com/photo-1504917595217-d4dc5ebb6122?w=1200&q=80"
+            src="https://images.unsplash.com/photo-504917595217-d4dc5ebb6122?w=1200&q=80"
             alt=""
             className="w-full h-full object-cover"
           />
@@ -47,11 +58,11 @@ const AboutPage = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold mb-6">
               Crafting Industrial
               <br />
-              <span className="gold-text">Excellence Since 2003</span>
+              <span className="gold-text">Excellence Since 2004</span>
             </h1>
             <p className="text-lg text-creme/70 leading-relaxed">
               Two decades of engineering precision and unwavering commitment to quality
-              have made us Gujarat's most trusted name in heavy fabrication.
+              have made us one of India's most trusted names in heavy fabrication.
             </p>
           </motion.div>
         </div>
@@ -83,14 +94,14 @@ const AboutPage = () => {
                 Our Story
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Founded in 2003 by visionary engineers, Patel Fabrication Works began
-                as a small workshop with a big dream – to deliver world-class heavy
+                Founded in 2004 by visionary engineers, Kumar Fabricators began
+                as a focused workshop with a big dream – to deliver world-class heavy
                 fabrication solutions that power India's industrial growth.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Today, we stand as a testament to that vision. Our 15,000 sq ft
-                state-of-the-art facility houses cutting-edge machinery operated by
-                skilled craftsmen who bring decades of expertise to every project.
+                state-of-the-art facility in Jejuri, Pune houses cutting-edge machinery
+                operated by skilled craftsmen who bring decades of expertise to every project.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 From sugar mills to metro rail infrastructure, our fabrications form
@@ -117,9 +128,10 @@ const AboutPage = () => {
                 </div>
                 <h3 className="text-2xl font-serif font-semibold mb-4">Our Mission</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To deliver precision-engineered fabrication solutions that exceed
-                  industry standards, while fostering long-term partnerships built on
-                  trust, quality, and timely delivery.
+                  To provide our clients with superior-quality fabricated products that meet 
+                  their specific requirements. We aim to deliver innovative solutions while 
+                  adhering to the highest industry standards, ensuring customer satisfaction, 
+                  and building long-term relationships.
                 </p>
               </div>
             </ScrollReveal>
@@ -132,8 +144,9 @@ const AboutPage = () => {
                 <h3 className="text-2xl font-serif font-semibold mb-4">Our Vision</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   To be India's most trusted heavy fabrication partner, recognized
-                  globally for our engineering excellence, innovation, and unwavering
-                  commitment to quality.
+                  for our engineering excellence, innovation, and unwavering
+                  commitment to quality across Sugar, Cement, Paper, Chemical
+                  & Handling Equipment industries.
                 </p>
               </div>
             </ScrollReveal>
@@ -188,8 +201,45 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Workforce Distribution */}
       <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 lg:px-8">
+          <SectionHeader
+            title="Our Workforce"
+            subtitle="8 specialized departments working together"
+          />
+
+          <div className="max-w-3xl mx-auto">
+            <StaggerContainer className="space-y-4">
+              {workforceData.map((item, index) => (
+                <StaggerItem key={index}>
+                  <div className="flex items-center gap-4">
+                    <div className="w-24 text-sm font-medium text-foreground">
+                      {item.role}
+                    </div>
+                    <div className="flex-1 h-8 bg-muted rounded-full overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${item.percentage}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: index * 0.1 }}
+                        className="h-full bg-primary rounded-full flex items-center justify-end pr-3"
+                      >
+                        <span className="text-xs font-medium text-charcoal">
+                          {item.percentage}%
+                        </span>
+                      </motion.div>
+                    </div>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-24 bg-secondary">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader
             title="Our Core Values"
@@ -220,21 +270,21 @@ const AboutPage = () => {
       </section>
 
       {/* Team Stats */}
-      <section className="py-24 bg-secondary">
+      <section className="py-24 bg-primary">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: "50+", label: "Skilled Workers" },
-              { value: "10+", label: "Engineers" },
-              { value: "5+", label: "Quality Inspectors" },
-              { value: "20+", label: "Years Average Experience" },
+              { value: "8", label: "Departments" },
+              { value: "65", label: "HP Power Supply" },
+              { value: "15,000", label: "Sq Ft Facility" },
+              { value: "20+", label: "Years Experience" },
             ].map((stat, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
                 <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-serif font-bold text-primary mb-2">
+                  <div className="text-4xl md:text-5xl font-serif font-bold text-charcoal mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-muted-foreground">{stat.label}</div>
+                  <div className="text-charcoal/70">{stat.label}</div>
                 </div>
               </ScrollReveal>
             ))}

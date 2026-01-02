@@ -28,7 +28,7 @@ const HeroSection = () => {
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="text-sm text-creme/90 font-medium">
-              20+ Years of Engineering Excellence
+              Since 2004 - 20+ Years of Engineering Excellence
             </span>
           </motion.div>
 
@@ -51,9 +51,9 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg md:text-xl text-creme/80 max-w-2xl mb-10 leading-relaxed"
           >
-            India's premier heavy fabrication partner, delivering precision-engineered
-            industrial solutions for sugar, cement, paper, and chemical industries
-            with uncompromising quality.
+            Manufacturers & Suppliers for Heavy Machinery & Equipment for Sugar,
+            Cement, Paper, Chemical & Handling Equipment industries with
+            uncompromising quality since 2004.
           </motion.p>
 
           {/* CTAs */}
@@ -85,7 +85,7 @@ const HeroSection = () => {
             {[
               { value: "20+", label: "Years Experience" },
               { value: "500+", label: "Projects Delivered" },
-              { value: "50+", label: "Active Clients" },
+              { value: "10+", label: "Trusted Clients" },
               { value: "15,000", label: "Sq Ft Facility" },
             ].map((stat, index) => (
               <div key={index} className="text-center sm:text-left">

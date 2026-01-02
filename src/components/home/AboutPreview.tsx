@@ -39,17 +39,17 @@ const AboutPreview = () => {
               <span className="text-primary">Heavy Fabrication</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Established with a vision to deliver world-class fabrication solutions,
-              Patel Fabrication Works has grown into one of Gujarat's most trusted
+              Established in 2004 with a vision to deliver world-class fabrication solutions,
+              Kumar Fabricators has grown into one of Maharashtra's most trusted
               names in heavy industrial manufacturing. Our expertise spans across
-              sugar processing equipment, railway infrastructure, and industrial
+              sugar processing equipment, metro & railway infrastructure, and industrial
               storage solutions.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Every project we undertake reflects our commitment to precision,
-              durability, and client satisfaction. Our state-of-the-art facility,
-              combined with skilled craftsmen, ensures that each fabrication meets
-              the highest industry standards.
+              To provide our clients with superior-quality fabricated products that meet
+              their specific requirements. We aim to deliver innovative solutions while
+              adhering to the highest industry standards, ensuring customer satisfaction,
+              and building long-term relationships.
             </p>
 
             {/* Features */}
