@@ -48,7 +48,7 @@ const industries = [
 
 const IndustriesSection = () => {
   return (
-    <section className="py-24 bg-charcoal text-creme relative overflow-hidden">
+    <section className="py-12 md:py-16 lg:py-24 bg-[hsl(210_50%_20%)] text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -59,27 +59,27 @@ const IndustriesSection = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8 relative">
+      <div className="container mx-auto px-3 md:px-4 lg:px-8 relative">
         <SectionHeader
           title="Industries We Serve"
           subtitle="Trusted by leading industrial giants across India"
           light
         />
 
-        <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
+        <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
           {industries.map((industry, index) => (
             <StaggerItem key={index}>
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="group text-center p-6 rounded-lg border border-creme/10 bg-creme/5 backdrop-blur-sm hover:border-primary/50 transition-all duration-300"
+                className="group text-center p-4 md:p-5 lg:p-6 border border-white/20 bg-white/5 backdrop-blur-sm hover:border-primary/50 transition-all duration-300"
               >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <industry.icon className="w-7 h-7 text-primary" />
+                <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 mx-auto mb-3 md:mb-4 bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <industry.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-primary" />
                 </div>
-                <h3 className="text-lg font-serif font-semibold mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-sm md:text-base lg:text-lg font-sans font-bold mb-1 md:mb-2 group-hover:text-primary transition-colors">
                   {industry.name}
                 </h3>
-                <p className="text-creme/60 text-xs">
+                <p className="text-white/70 text-[10px] md:text-xs">
                   {industry.description}
                 </p>
               </motion.div>

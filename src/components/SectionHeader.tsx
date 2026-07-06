@@ -19,14 +19,14 @@ const SectionHeader = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className={`mb-12 md:mb-16 ${centered ? "text-center" : ""}`}
+      className={`mb-6 md:mb-10 lg:mb-12 xl:mb-16 ${centered ? "text-center" : ""}`}
     >
       <div
-        className={`divider-gold mb-6 ${centered ? "mx-auto" : ""}`}
+        className={`divider-gold mb-4 md:mb-5 lg:mb-6 ${centered ? "mx-auto" : ""}`}
       />
       <h2
-        className={`section-title mb-4 ${
-          light ? "text-creme" : "text-foreground"
+        className={`section-title mb-3 md:mb-4 ${
+          light ? "text-white" : "text-foreground"
         }`}
       >
         {title}
@@ -34,7 +34,7 @@ const SectionHeader = ({
       {subtitle && (
         <p
           className={`section-subtitle ${centered ? "mx-auto" : ""} ${
-            light ? "text-creme/70" : ""
+            light ? "text-white/80" : ""
           }`}
         >
           {subtitle}

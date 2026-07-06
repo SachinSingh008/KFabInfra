@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ["Playfair Display", "Georgia", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        serif: ["Arial", "Helvetica", "sans-serif"],
+        sans: ["Arial", "Helvetica", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,17 +51,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
-          dark: "hsl(var(--gold-dark))",
+        blue: {
+          DEFAULT: "hsl(var(--blue-primary))",
+          light: "hsl(var(--blue-light))",
+          dark: "hsl(var(--blue-dark))",
+          darker: "hsl(var(--blue-darker))",
         },
-        charcoal: {
-          DEFAULT: "hsl(var(--charcoal))",
-          light: "hsl(var(--charcoal-light))",
-        },
-        creme: "hsl(var(--creme))",
-        ivory: "hsl(var(--ivory))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -74,9 +69,9 @@ export default {
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "0",
+        md: "0",
+        sm: "0",
       },
       keyframes: {
         "accordion-down": {
@@ -105,10 +100,10 @@ export default {
         },
         marquee: {
           "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(-50%)" },
         },
         "marquee-reverse": {
-          "0%": { transform: "translateX(-100%)" },
+          "0%": { transform: "translateX(-50%)" },
           "100%": { transform: "translateX(0%)" },
         },
         shimmer: {
@@ -131,21 +126,23 @@ export default {
         "fade-in": "fade-in 0.6s ease-out forwards",
         "slide-in-left": "slide-in-left 0.8s ease-out forwards",
         "slide-in-right": "slide-in-right 0.8s ease-out forwards",
-        marquee: "marquee 30s linear infinite",
-        "marquee-reverse": "marquee-reverse 30s linear infinite",
+        marquee: "marquee 20s linear infinite",
+        "marquee-reverse": "marquee-reverse 20s linear infinite",
+        "marquee-mobile": "marquee 15s linear infinite",
+        "marquee-reverse-mobile": "marquee-reverse 15s linear infinite",
         shimmer: "shimmer 2s infinite",
         pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "scale-in": "scale-in 0.5s ease-out forwards",
       },
       backgroundImage: {
-        "gradient-gold": "var(--gradient-gold)",
-        "gradient-gold-subtle": "var(--gradient-gold-subtle)",
+        "gradient-blue": "var(--gradient-blue)",
+        "gradient-blue-subtle": "var(--gradient-blue-subtle)",
         "gradient-dark": "var(--gradient-dark)",
         "hero-overlay": "var(--gradient-hero-overlay)",
       },
       boxShadow: {
-        gold: "var(--shadow-gold)",
-        "gold-lg": "var(--shadow-gold-lg)",
+        blue: "var(--shadow-blue)",
+        "blue-lg": "var(--shadow-blue-lg)",
         elegant: "var(--shadow-elegant)",
         card: "var(--shadow-card)",
       },
