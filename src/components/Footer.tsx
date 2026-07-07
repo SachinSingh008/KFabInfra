@@ -38,19 +38,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-primary flex items-center justify-center">
-                <span className="text-xl md:text-2xl font-sans font-bold text-white">
-                  K
-                </span>
-              </div>
-              <div>
-                <h3 className="text-base md:text-lg lg:text-xl font-sans font-bold">
-                  KFab Infra Project PVT LTD
-                </h3>
-                <p className="text-[10px] md:text-xs text-white/70 tracking-wider uppercase">
-                  Heavy Machinery & Equipment
-                </p>
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="KFab Infra Project Logo" 
+                className="h-16 md:h-20 lg:h-24 w-auto object-contain"
+              />
             </div>
             <p className="text-sm md:text-base text-white/80 mb-4 md:mb-6 max-w-sm leading-relaxed">
               With over 20 years of excellence in heavy fabrication, we deliver

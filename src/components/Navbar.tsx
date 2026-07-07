@@ -61,19 +61,11 @@ const Navbar = () => {
           <nav className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 md:gap-3">
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-primary flex items-center justify-center">
-                <span className="text-xl md:text-2xl font-sans font-bold text-primary-foreground">
-                  K
-                </span>
-              </div>
-              <div className="hidden sm:block">
-                <h1 className={`text-base md:text-lg lg:text-xl font-sans font-bold transition-colors duration-300 ${textColorClass}`}>
-                  KFab Infra Project PVT LTD
-                </h1>
-                <p className={`text-[10px] md:text-xs tracking-wider uppercase transition-colors duration-300 ${mutedTextColorClass}`}>
-                  Heavy Machinery & Equipment
-                </p>
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="KFab Infra Project Logo" 
+                className="h-12 md:h-16 lg:h-20 w-auto object-contain"
+              />
             </Link>
 
             {/* Desktop Navigation */}

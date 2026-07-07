@@ -1,18 +1,32 @@
+import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
-import heroImage from "@/assets/hero-industrial.jpg";
+import heroVideo from "@/assets/hero video.mp4";
 
 const HeroSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5;
+    }
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Industrial fabrication facility with welding sparks"
+      {/* Background Video */}
+      <div className="absolute inset-0 bg-[hsl(210_50%_15%)]">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
           className="w-full h-full object-cover"
-        />
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 hero-overlay" />
       </div>
 
