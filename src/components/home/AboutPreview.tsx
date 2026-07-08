@@ -12,11 +12,11 @@ const AboutPreview = () => {
           {/* Image Side */}
           <ScrollReveal direction="left" className="relative">
             <div className="relative">
-              <div className="aspect-[4/3] overflow-hidden bg-secondary/30 rounded-lg">
+              <div className="overflow-hidden rounded-lg">
                 <img
                   src={craneImg}
                   alt="Industrial workshop"
-                  className="w-full h-full object-contain"
+                  className="w-full h-auto object-cover"
                 />
               </div>
               {/* Floating Card */}
@@ -40,7 +40,7 @@ const AboutPreview = () => {
               <span className="text-primary">Heavy Fabrication</span>
             </h2>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4 md:mb-6">
-              Established in 2004 with a vision to deliver world-class fabrication solutions,
+              Established in 1998 with a vision to deliver world-class fabrication solutions,
               KFab Infra Project PVT LTD has grown into one of Maharashtra's most trusted
               names in heavy industrial manufacturing. Our expertise spans across
               sugar processing equipment, metro & railway infrastructure, and industrial
@@ -53,17 +53,17 @@ const AboutPreview = () => {
               and building long-term relationships.
             </p>
 
-            {/* Features */}
-            <div className="grid sm:grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8">
+            {/* Stats */}
+            <div className="grid grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-10">
               {[
-                "Contract-Based Excellence",
-                "Precision Engineering",
-                "Timely Delivery",
-                "Quality Assurance",
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary" />
-                  <span className="text-foreground font-medium">{feature}</span>
+                { value: "130,000", label: "Sq Ft Facility" },
+                { value: "65 HP", label: "Power Supply" },
+                { value: "8", label: "Departments" },
+                { value: "25+", label: "Years Experience" },
+              ].map((stat, index) => (
+                <div key={index} className="flex flex-col border-l-2 border-primary pl-4 py-1">
+                  <span className="text-2xl md:text-3xl font-sans font-bold text-foreground">{stat.value}</span>
+                  <span className="text-xs md:text-sm text-muted-foreground font-medium uppercase tracking-wider mt-1">{stat.label}</span>
                 </div>
               ))}
             </div>

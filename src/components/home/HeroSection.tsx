@@ -42,7 +42,7 @@ const HeroSection = () => {
           >
             <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-primary" />
             <span className="text-xs md:text-sm text-white font-medium">
-              Since 2004 - 20+ Years of Engineering Excellence
+              Since 1998 - 25+ Years of Engineering Excellence
             </span>
           </motion.div>
 
@@ -67,7 +67,7 @@ const HeroSection = () => {
           >
             Manufacturers & Suppliers for Heavy Machinery & Equipment for Sugar,
             Cement, Paper, Chemical & Handling Equipment industries with
-            uncompromising quality since 2004.
+            uncompromising quality since 1998.
           </motion.p>
 
           {/* CTAs */}
@@ -97,10 +97,10 @@ const HeroSection = () => {
             className="mt-8 md:mt-12 lg:mt-16 pt-6 md:pt-8 border-t border-white/20 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8"
           >
             {[
-              { value: "20+", label: "Years Experience" },
-              { value: "500+", label: "Projects Delivered" },
-              { value: "10+", label: "Trusted Clients" },
-              { value: "15,000", label: "Sq Ft Facility" },
+              { value: "130,000", label: "Sq Ft Facility" },
+              { value: "65 HP", label: "Power Supply" },
+              { value: "8", label: "Departments" },
+              { value: "25+", label: "Years Experience" },
             ].map((stat, index) => (
               <div key={index} className="text-center sm:text-left">
                 <div className="text-2xl md:text-3xl lg:text-4xl font-sans font-bold text-primary mb-1">

@@ -2,16 +2,29 @@ import { motion } from "framer-motion";
 import SectionHeader from "../SectionHeader";
 
 const clients = [
-  "Indiana Gratings Pvt. Ltd.",
-  "Indiana Conveyor Pvt. Ltd.",
-  "WMI Cranes Ltd.",
-  "Global Steels Hyderabad",
-  "Kushwaha Industries",
-  "Consolidated Hoist Pvt. Ltd.",
-  "TOWELL Engineering Int. LLP",
-  "Crossworld Industries",
-  "General Energy Management System Pvt. Ltd.",
-  "Thermax Ltd.",
+  { name: "Indiana Gratings Pvt. Ltd.", domain: "indianagroup.com" },
+  { name: "Indiana Conveyor Pvt. Ltd.", domain: "indianagroup.com" },
+  { name: "WMI Cranes Ltd.", domain: "wmicranes.com" },
+  { name: "Global Steels Hyderabad", domain: "agarwalsteelindustries.com" },
+  { name: "Kushwaha Industries", domain: "kushwahaengineers.com" },
+  { name: "Consolidated Hoist Pvt. Ltd.", domain: "consolidatedswift.com" },
+  { name: "TOWELL Engineering Int. LLP", domain: "towellengineering.com" },
+  { name: "Crossworld Industries", domain: "crossworldindustries.com" },
+  { name: "General Energy Management System Pvt. Ltd.", domain: "gemsl.com" },
+  { name: "Thermax Ltd.", domain: "thermaxglobal.com" },
+  { name: "BHEL", domain: "bhel.com" },
+  { name: "MetroTech", domain: "metrotech.com" },
+  { name: "wirlpool", domain: "whirlpool.com" },
+  { name: "L&T", domain: "larsentoubro.com" },
+  { name: "Bajaj Mukand", domain: "mukand.com" },
+  { name: "Ciscol", domain: "ciscol.com" },
+  { name: "Consolidated Hoists Private Limited", domain: "consolidatedswift.com" },
+  { name: "Alloyod Steel", domain: "alloyedsteel.com" },
+  { name: "Zamil Steel", domain: "zamilsteel.com" },
+  { name: "Wheels India", domain: "wheelsindia.com" },
+  { name: "Konecranes", domain: "konecranes.com" },
+  { name: "JSW", domain: "jsw.in" },
+  { name: "JSPL", domain: "jindalsteelpower.com" },
 ];
 
 const ClientsMarquee = () => {
@@ -40,10 +53,20 @@ const ClientsMarquee = () => {
           {clientsRepeated.map((client, index) => (
             <div
               key={index}
-              className="flex-shrink-0 px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-6 border border-border bg-card hover:border-primary/30 transition-colors min-w-[160px] md:min-w-[180px] lg:min-w-[200px] text-center"
+              className="flex-shrink-0 px-4 md:px-8 lg:px-12 min-w-[160px] md:min-w-[200px] lg:min-w-[240px] flex flex-col items-center justify-center gap-3 py-4"
+              title={client.name}
             >
-              <span className="text-sm md:text-base lg:text-lg font-sans font-medium text-foreground/80">
-                {client}
+              <img 
+                src={`https://logo.clearbit.com/${client.domain}`} 
+                alt={client.name} 
+                className="max-h-16 md:max-h-20 max-w-full object-contain transition-all duration-300" 
+                onError={(e) => { 
+                  e.currentTarget.onerror = null; 
+                  e.currentTarget.src = `https://www.google.com/s2/favicons?domain=${client.domain}&sz=128`; 
+                }} 
+              />
+              <span className="text-xs md:text-sm font-medium text-foreground/70 text-center">
+                {client.name}
               </span>
             </div>
           ))}
@@ -54,10 +77,20 @@ const ClientsMarquee = () => {
           {clientsReversedRepeated.map((client, index) => (
             <div
               key={index}
-              className="flex-shrink-0 px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-6 border border-border bg-card hover:border-primary/30 transition-colors min-w-[160px] md:min-w-[180px] lg:min-w-[200px] text-center"
+              className="flex-shrink-0 px-4 md:px-8 lg:px-12 min-w-[160px] md:min-w-[200px] lg:min-w-[240px] flex flex-col items-center justify-center gap-3 py-4"
+              title={client.name}
             >
-              <span className="text-sm md:text-base lg:text-lg font-sans font-medium text-foreground/80">
-                {client}
+              <img 
+                src={`https://logo.clearbit.com/${client.domain}`} 
+                alt={client.name} 
+                className="max-h-16 md:max-h-20 max-w-full object-contain transition-all duration-300" 
+                onError={(e) => { 
+                  e.currentTarget.onerror = null; 
+                  e.currentTarget.src = `https://www.google.com/s2/favicons?domain=${client.domain}&sz=128`; 
+                }} 
+              />
+              <span className="text-xs md:text-sm font-medium text-foreground/70 text-center">
+                {client.name}
               </span>
             </div>
           ))}

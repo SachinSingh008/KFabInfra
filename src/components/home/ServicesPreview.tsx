@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Cylinder, Box, Factory, Building, Layers, Hammer, Wrench, LayoutGrid, Plane } from "lucide-react";
@@ -65,13 +66,16 @@ const services = [
   },
   {
     icon: Plane,
-    title: "Hooghly Airport Infrastructure",
+    title: "Hubballi Airport Infrastructure",
     description: "Structural fabrication and infrastructure support for major airport construction and expansions",
     image: hooglyAirportImg,
   },
 ];
 
 const ServicesPreview = () => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleServices = showAll ? services : services.slice(0, 4);
+
   return (
     <section className="py-12 md:py-16 lg:py-24 bg-secondary">
       <div className="container mx-auto px-3 md:px-4 lg:px-8">
@@ -81,7 +85,7 @@ const ServicesPreview = () => {
         />
 
         <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-          {services.map((service, index) => (
+          {visibleServices.map((service, index) => (
             <StaggerItem key={index}>
               <motion.div
                 whileHover={{ y: -8 }}
@@ -122,10 +126,13 @@ const ServicesPreview = () => {
           viewport={{ once: true }}
           className="text-center mt-8 md:mt-12"
         >
-          <Link to="/services" className="btn-gold inline-flex items-center gap-2 text-sm md:text-base px-6 md:px-8 py-2.5 md:py-3">
-            <span>View All Services</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          <button 
+            onClick={() => setShowAll(!showAll)}
+            className="btn-gold inline-flex items-center gap-2 text-sm md:text-base px-6 md:px-8 py-2.5 md:py-3"
+          >
+            <span>{showAll ? "Show Less" : "Show More"}</span>
+            <ArrowRight className={`w-4 h-4 transition-transform ${showAll ? "-rotate-90" : "rotate-90"}`} />
+          </button>
         </motion.div>
       </div>
     </section>

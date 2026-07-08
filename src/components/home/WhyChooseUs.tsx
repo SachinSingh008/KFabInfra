@@ -6,7 +6,7 @@ import ScrollReveal from "../ScrollReveal";
 const features = [
   {
     icon: Award,
-    title: "20+ Years Experience",
+    title: "25+ Years Experience",
     description:
       "Extensive industry experience with deep knowledge and expertise in heavy fabrication",
   },

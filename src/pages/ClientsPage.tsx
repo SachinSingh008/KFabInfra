@@ -6,16 +6,29 @@ import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
 const clients = [
-  "Indiana Gratings Pvt. Ltd.",
-  "Indiana Conveyor Pvt. Ltd.",
-  "WMI Cranes Ltd.",
-  "Global Steels Hyderabad",
-  "Kushwaha Industries",
-  "Consolidated Hoist Pvt. Ltd.",
-  "TOWELL Engineering Int. LLP",
-  "Crossworld Industries",
-  "General Energy Management System Pvt. Ltd.",
-  "Thermax Ltd.",
+  { name: "Indiana Gratings Pvt. Ltd.", domain: "indianagroup.com" },
+  { name: "Indiana Conveyor Pvt. Ltd.", domain: "indianagroup.com" },
+  { name: "WMI Cranes Ltd.", domain: "wmicranes.com" },
+  { name: "Global Steels Hyderabad", domain: "agarwalsteelindustries.com" },
+  { name: "Kushwaha Industries", domain: "kushwahaengineers.com" },
+  { name: "Consolidated Hoist Pvt. Ltd.", domain: "consolidatedswift.com" },
+  { name: "TOWELL Engineering Int. LLP", domain: "towellengineering.com" },
+  { name: "Crossworld Industries", domain: "crossworldindustries.com" },
+  { name: "General Energy Management System Pvt. Ltd.", domain: "gemsl.com" },
+  { name: "Thermax Ltd.", domain: "thermaxglobal.com" },
+  { name: "BHEL", domain: "bhel.com" },
+  { name: "MetroTech", domain: "metrotech.com" },
+  { name: "wirlpool", domain: "whirlpool.com" },
+  { name: "L&T", domain: "larsentoubro.com" },
+  { name: "Bajaj Mukand", domain: "mukand.com" },
+  { name: "Ciscol", domain: "ciscol.com" },
+  { name: "Consolidated Hoists Private Limited", domain: "consolidatedswift.com" },
+  { name: "Alloyod Steel", domain: "alloyedsteel.com" },
+  { name: "Zamil Steel", domain: "zamilsteel.com" },
+  { name: "Wheels India", domain: "wheelsindia.com" },
+  { name: "Konecranes", domain: "konecranes.com" },
+  { name: "JSW", domain: "jsw.in" },
+  { name: "JSPL", domain: "jindalsteelpower.com" },
 ];
 
 const testimonials = [
@@ -80,15 +93,25 @@ const ClientsPage = () => {
             subtitle="Partnering with organizations that drive India's industrial growth"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {clients.map((client, index) => (
               <ScrollReveal key={index} delay={index * 0.05}>
                 <motion.div
                   whileHover={{ scale: 1.05, y: -4 }}
-                  className="p-6 rounded-lg border border-border bg-card text-center hover:border-primary/50 hover:shadow-gold transition-all duration-300"
+                  className="p-4 flex flex-col items-center justify-center gap-4 transition-all duration-300 py-6"
+                  title={client.name}
                 >
-                  <span className="text-lg font-serif font-medium text-foreground/80">
-                    {client}
+                  <img 
+                    src={`https://logo.clearbit.com/${client.domain}`} 
+                    alt={client.name} 
+                    className="max-h-20 md:max-h-28 max-w-full object-contain transition-all duration-300" 
+                    onError={(e) => { 
+                      e.currentTarget.onerror = null; 
+                      e.currentTarget.src = `https://www.google.com/s2/favicons?domain=${client.domain}&sz=128`; 
+                    }} 
+                  />
+                  <span className="text-sm md:text-base font-semibold text-foreground/80 text-center">
+                    {client.name}
                   </span>
                 </motion.div>
               </ScrollReveal>

@@ -182,9 +182,9 @@ const services = [
     features: ["High strength", "Modular design", "Quality material"],
   },
   {
-    slug: "hooghly-airport",
-    title: "Hooghly Airport Infrastructure",
-    description: "Structural fabrication and infrastructure support for major airport construction and expansions.",
+    slug: "hubballi-airport",
+    title: "Hubballi Airport Infrastructure",
+    description: "Structural fabrication and infrastructure support for major airport construction and expansions",
     image: hooglyAirportImg,
     features: ["Airport standard", "Large spans", "Precision build"],
   },
