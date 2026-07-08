@@ -6,174 +6,187 @@ import { StaggerContainer, StaggerItem } from "@/components/StaggerContainer";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
+import ciloStool from "@/assets/cilo stool.png";
+import cilo from "@/assets/cilo.jpeg";
+import furnace from "@/assets/furnace.png";
+import railwayBridge from "@/assets/railway bridge.png";
+import railwayGudderAssembly from "@/assets/railway gudder assebly.png";
+import railwayGudder from "@/assets/railway gudder.png";
+import trus from "@/assets/trus (1).png";
+import calandriaImg from "@/assets/calandria.png";
+import catchallImg from "@/assets/catchall.png";
+import conocialCiloImg from "@/assets/conocial cilo.png";
+import cuboidalTankImg from "@/assets/cubiodal tank.png";
+import curveShedImg from "@/assets/curve shed.png";
+import desielTankImg from "@/assets/desiel tank.jpeg";
+import fustrumSiloImg from "@/assets/fustrum silo.png";
+import hopperImg from "@/assets/hopper.jpeg";
+import metroGiderImg from "@/assets/metro gider.png";
+import plantShedImg from "@/assets/plant shed.png";
+import rollerImg from "@/assets/roller.png";
+import sugercanVesselImg from "@/assets/sugercan vessel.png";
+import undergroungDesielTankImg from "@/assets/undergroung desiel tank.png";
+import railwayGudderAsebImg from "@/assets/railway gudder aseb,y.jpeg";
+import vslKattarImg from "@/assets/vsl kattar 2.jpg";
+import pileHeadImg from "@/assets/pile head.jpeg";
+import goliathCraneLegImg from "@/assets/goliath crane leg.jpeg";
+import deckPannelImg from "@/assets/deck pannel.jpeg";
+import hooglyAirportImg from "@/assets/hoogly airport.png";
+
 const services = [
   {
     slug: "sugarcane-vessels",
     title: "Sugarcane Vessels",
-    description: "High-capacity processing vessels engineered specifically for sugar mills, designed for optimal efficiency and durability under demanding conditions.",
-    image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80",
+    description: "High-capacity processing vessels engineered specifically for sugar mills.",
+    image: sugercanVesselImg,
     features: ["Custom capacities", "Corrosion resistant", "Easy maintenance"],
   },
   {
     slug: "metro-girders",
     title: "Metro Girders",
-    description: "Precision-fabricated structural girders for metro systems, meeting stringent safety and load-bearing specifications.",
-    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80",
+    description: "Precision-fabricated structural girders for metro systems.",
+    image: metroGiderImg,
     features: ["Load-tested", "Precision welding", "Certified quality"],
   },
   {
     slug: "railway-girders",
     title: "Railway Girders",
-    description: "Heavy-duty railway girders and structural components for rail infrastructure projects across India.",
-    image: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&q=80",
+    description: "Heavy-duty railway girders and structural components for rail infrastructure.",
+    image: railwayGudder,
     features: ["Railway certified", "High load capacity", "Durable construction"],
   },
   {
     slug: "spherical-shed",
     title: "Spherical Shed",
     description: "Innovative spherical shed designs for unique storage and industrial requirements.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80",
+    image: curveShedImg,
     features: ["Unique design", "Space efficient", "Weather resistant"],
   },
   {
     slug: "underground-diesel-tanks",
     title: "Underground Diesel Tanks",
-    description: "Heavy-duty underground storage tanks for diesel and petroleum products, built to environmental safety standards.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
+    description: "Heavy-duty underground storage tanks for diesel and petroleum products.",
+    image: undergroungDesielTankImg,
     features: ["Double-walled", "Leak detection", "Long lifespan"],
   },
   {
     slug: "frustum-silo",
     title: "Frustum Silo",
     description: "Specialized frustum-shaped silos for efficient material storage and discharge.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80",
+    image: fustrumSiloImg,
     features: ["Efficient flow", "Custom sizes", "Robust design"],
   },
   {
     slug: "conical-silo",
     title: "Conical Silo",
     description: "Conical silos designed for optimal material flow and storage efficiency.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80",
+    image: conocialCiloImg,
     features: ["Gravity discharge", "Large capacity", "Weatherproof"],
-  },
-  {
-    slug: "sugarcane-silos",
-    title: "Sugarcane Silos",
-    description: "Purpose-built silos for sugarcane and related material storage in sugar mills.",
-    image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80",
-    features: ["Sugar industry spec", "Easy cleaning", "Durable"],
   },
   {
     slug: "roller",
     title: "Rollers",
     description: "Industrial rollers for material handling and manufacturing processes.",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebb6122?w=600&q=80",
+    image: rollerImg,
     features: ["Wear resistant", "Precision balanced", "Custom specs"],
   },
   {
     slug: "calandria",
     title: "Calandria",
     description: "Precision-engineered calandria for heat exchange applications in sugar and chemical processing.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
+    image: calandriaImg,
     features: ["Efficient heat transfer", "Tube arrangement", "Durable construction"],
-  },
-  {
-    slug: "gratings-frame",
-    title: "Gratings & Frames",
-    description: "Industrial-grade gratings and structural frames for walkways, platforms, and machinery support systems.",
-    image: "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=600&q=80",
-    features: ["Anti-slip surface", "Heavy load capacity", "Modular design"],
   },
   {
     slug: "catchall",
     title: "Catchall",
     description: "Specialized catchall systems for industrial material collection and handling.",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebb6122?w=600&q=80",
+    image: catchallImg,
     features: ["Custom design", "Easy access", "Durable build"],
   },
   {
     slug: "silo-with-base",
     title: "Silo with Base",
     description: "Complete silo systems with integrated base structures for stability and easy installation.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80",
+    image: ciloStool,
     features: ["Integrated base", "Quick setup", "Stable design"],
   },
   {
     slug: "plant-shed",
     title: "Plant Shed",
     description: "Custom industrial plant sheds for manufacturing and storage facilities.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80",
+    image: plantShedImg,
     features: ["Custom spans", "Weather resistant", "Quick installation"],
-  },
-  {
-    slug: "connector",
-    title: "Connectors",
-    description: "Structural connectors and joining components for industrial assemblies.",
-    image: "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=600&q=80",
-    features: ["High strength", "Precision fit", "Corrosion resistant"],
   },
   {
     slug: "hopper",
     title: "Hoppers",
     description: "Material handling hoppers for manufacturing and processing facilities.",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebb6122?w=600&q=80",
+    image: hopperImg,
     features: ["Wear resistant", "Custom angles", "Easy cleaning"],
   },
   {
     slug: "tanks",
     title: "Tanks",
     description: "Industrial storage tanks for various liquids and materials.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
+    image: desielTankImg,
     features: ["Multiple sizes", "Pressure rated", "Long lifespan"],
   },
   {
     slug: "gallery-structure",
     title: "Gallery Structures",
     description: "Elevated walkways and gallery structures for industrial facilities, ensuring safe access and material transport.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80",
+    image: railwayBridge,
     features: ["Safety compliant", "Modular sections", "Heavy loads"],
-  },
-  {
-    slug: "silo-tanks",
-    title: "Silo Tanks",
-    description: "Combined silo and tank systems for versatile industrial storage needs.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80",
-    features: ["Dual purpose", "Large capacity", "Efficient design"],
   },
   {
     slug: "cuboidal-tanks",
     title: "Cuboidal Tanks",
     description: "Rectangular storage tanks optimized for space efficiency.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
+    image: cuboidalTankImg,
     features: ["Space efficient", "Easy installation", "Stackable"],
   },
   {
     slug: "metro-girders-assembly",
     title: "Metro Girders Assembly",
     description: "Complete metro girder assembly services including installation support.",
-    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80",
+    image: railwayGudderAsebImg,
     features: ["Full assembly", "Quality tested", "Installation support"],
   },
   {
-    slug: "vertical-tanks",
-    title: "Vertical Tanks",
-    description: "Vertical storage tanks for optimized footprint and gravity-fed systems.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
-    features: ["Space saving", "Gravity feed", "Easy access"],
+    slug: "vsl-kattar",
+    title: "VSL Kattar",
+    description: "Specialized fabrication of VSL Kattar components for robust infrastructure support.",
+    image: vslKattarImg,
+    features: ["Robust construction", "Custom specs", "High durability"],
   },
   {
-    slug: "rolling-works",
-    title: "Rolling Works",
-    description: "Heavy metal plate rolling services for cylindrical, conical, and custom curved sections.",
-    image: "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=600&q=80",
-    features: ["Thick plates", "Precise radius", "Large diameters"],
+    slug: "pile-head",
+    title: "Pile Head",
+    description: "Precision-engineered pile heads designed to securely transfer heavy structural loads to foundations.",
+    image: pileHeadImg,
+    features: ["High load bearing", "Secure foundation", "Corrosion resistant"],
   },
   {
-    slug: "dish-end-tanks",
-    title: "Dish-end Tanks",
-    description: "Precision-formed dish ends and complete tank assemblies for pressure vessels and storage applications.",
-    image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80",
-    features: ["Pressure rated", "Various profiles", "Tight tolerances"],
+    slug: "goliath-crane-leg",
+    title: "Goliath Crane Leg",
+    description: "Heavy-duty structural legs for Goliath cranes, engineered for immense lifting operations.",
+    image: goliathCraneLegImg,
+    features: ["Heavy lifting support", "Precision fabrication", "Certified strength"],
+  },
+  {
+    slug: "deck-panel",
+    title: "Deck Panel",
+    description: "Durable and precisely fabricated deck panels for bridges, walkways, and industrial platforms.",
+    image: deckPannelImg,
+    features: ["High strength", "Modular design", "Quality material"],
+  },
+  {
+    slug: "hooghly-airport",
+    title: "Hooghly Airport Infrastructure",
+    description: "Structural fabrication and infrastructure support for major airport construction and expansions.",
+    image: hooglyAirportImg,
+    features: ["Airport standard", "Large spans", "Precision build"],
   },
 ];
 
@@ -186,8 +199,8 @@ const ServicesPage = () => {
       <section className="pt-32 pb-20 bg-charcoal text-creme relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img
-            src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1200&q=80"
-            alt=""
+            src={curveShedImg}
+            alt="Hero Background"
             className="w-full h-full object-cover"
           />
         </div>
@@ -207,7 +220,7 @@ const ServicesPage = () => {
             </h1>
             <p className="text-lg text-creme/70 leading-relaxed">
               Comprehensive heavy fabrication solutions for Sugar, Cement, Paper,
-              Chemical & Handling Equipment industries - 25+ specialized services.
+              Chemical & Handling Equipment industries.
             </p>
           </motion.div>
         </div>
@@ -228,7 +241,7 @@ const ServicesPage = () => {
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent" />
                   </div>
@@ -253,14 +266,6 @@ const ServicesPage = () => {
                         </span>
                       ))}
                     </div>
-
-                    <Link
-                      to={`/services/${service.slug}`}
-                      className="inline-flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all"
-                    >
-                      <span>Learn More</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
                   </div>
                 </motion.div>
               </StaggerItem>

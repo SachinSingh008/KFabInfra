@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
+import craneImg from "@/assets/crane 123.png";
 
 const AboutPreview = () => {
   return (
@@ -11,19 +12,19 @@ const AboutPreview = () => {
           {/* Image Side */}
           <ScrollReveal direction="left" className="relative">
             <div className="relative">
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden bg-secondary/30 rounded-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1504917595217-d4dc5ebb6122?w=800&q=80"
+                  src={craneImg}
                   alt="Industrial workshop"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
               {/* Floating Card */}
-              <div className="absolute -bottom-8 -right-8 bg-[hsl(210_50%_20%)] text-white p-6 shadow-2xl hidden md:block">
-                <div className="text-4xl font-sans font-bold text-primary mb-1">
-                  20+
+              <div className="absolute -bottom-6 -right-6 bg-[hsl(210_50%_20%)] text-white w-32 h-32 rounded-full shadow-2xl hidden md:flex flex-col items-center justify-center text-center p-3 border-4 border-background">
+                <div className="text-3xl font-sans font-bold text-primary mb-0.5">
+                  25+
                 </div>
-                <div className="text-sm text-white/80">Years of Excellence</div>
+                <div className="text-[10px] sm:text-xs text-white/90 font-medium leading-tight">Years of<br/>Excellence</div>
               </div>
               {/* Decorative Element */}
               <div className="absolute -top-4 -left-4 w-24 h-24 border-2 border-primary/30 -z-10" />
