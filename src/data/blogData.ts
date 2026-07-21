@@ -1,0 +1,222 @@
+export const blogData = [
+  {
+    "id": "how-pressure-vessels-are-manufactured",
+    "title": "How Pressure Vessels Are Manufactured",
+    "slug": "how-pressure-vessels-are-manufactured",
+    "date": "2026-07-21",
+    "seoTitle": "How Pressure Vessels Are Manufactured - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about how pressure vessels are manufactured in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding how pressure vessels are manufactured is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing how pressure vessels are manufactured, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in how pressure vessels are manufactured, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of How Pressure Vessels Are Manufactured"
+  },
+  {
+    "id": "peb-vs-conventional-structures",
+    "title": "PEB vs Conventional Structures",
+    "slug": "peb-vs-conventional-structures",
+    "date": "2026-07-18",
+    "seoTitle": "PEB vs Conventional Structures - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about peb vs conventional structures in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding peb vs conventional structures is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing peb vs conventional structures, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in peb vs conventional structures, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of PEB vs Conventional Structures"
+  },
+  {
+    "id": "industrial-fabrication-process",
+    "title": "Industrial Fabrication Process",
+    "slug": "industrial-fabrication-process",
+    "date": "2026-07-15",
+    "seoTitle": "Industrial Fabrication Process - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about industrial fabrication process in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding industrial fabrication process is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing industrial fabrication process, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in industrial fabrication process, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Industrial Fabrication Process"
+  },
+  {
+    "id": "structural-steel-grades",
+    "title": "Structural Steel Grades",
+    "slug": "structural-steel-grades",
+    "date": "2026-07-12",
+    "seoTitle": "Structural Steel Grades - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about structural steel grades in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding structural steel grades is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing structural steel grades, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in structural steel grades, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Structural Steel Grades"
+  },
+  {
+    "id": "sugar-plant-equipment-guide",
+    "title": "Sugar Plant Equipment Guide",
+    "slug": "sugar-plant-equipment-guide",
+    "date": "2026-07-09",
+    "seoTitle": "Sugar Plant Equipment Guide - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about sugar plant equipment guide in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding sugar plant equipment guide is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing sugar plant equipment guide, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in sugar plant equipment guide, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Sugar Plant Equipment Guide"
+  },
+  {
+    "id": "conveyor-design",
+    "title": "Conveyor Design",
+    "slug": "conveyor-design",
+    "date": "2026-07-06",
+    "seoTitle": "Conveyor Design - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about conveyor design in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding conveyor design is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing conveyor design, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in conveyor design, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Conveyor Design"
+  },
+  {
+    "id": "steel-fabrication-cost",
+    "title": "Steel Fabrication Cost",
+    "slug": "steel-fabrication-cost",
+    "date": "2026-07-03",
+    "seoTitle": "Steel Fabrication Cost - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about steel fabrication cost in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding steel fabrication cost is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing steel fabrication cost, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in steel fabrication cost, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Steel Fabrication Cost"
+  },
+  {
+    "id": "industrial-welding",
+    "title": "Industrial Welding",
+    "slug": "industrial-welding",
+    "date": "2026-06-30",
+    "seoTitle": "Industrial Welding - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about industrial welding in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding industrial welding is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing industrial welding, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in industrial welding, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Industrial Welding"
+  },
+  {
+    "id": "is-standards",
+    "title": "IS Standards",
+    "slug": "is-standards",
+    "date": "2026-06-27",
+    "seoTitle": "IS Standards - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about is standards in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding is standards is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing is standards, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in is standards, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of IS Standards"
+  },
+  {
+    "id": "heavy-fabrication-process",
+    "title": "Heavy Fabrication Process",
+    "slug": "heavy-fabrication-process",
+    "date": "2026-06-24",
+    "seoTitle": "Heavy Fabrication Process - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about heavy fabrication process in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding heavy fabrication process is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing heavy fabrication process, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in heavy fabrication process, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Heavy Fabrication Process"
+  },
+  {
+    "id": "advances-in-heavy-machinery",
+    "title": "Advances in Heavy Machinery",
+    "slug": "advances-in-heavy-machinery",
+    "date": "2026-06-21",
+    "seoTitle": "Advances in Heavy Machinery - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about advances in heavy machinery in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding advances in heavy machinery is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing advances in heavy machinery, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in advances in heavy machinery, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Advances in Heavy Machinery"
+  },
+  {
+    "id": "importance-of-non-destructive-testing",
+    "title": "Importance of Non-Destructive Testing",
+    "slug": "importance-of-non-destructive-testing",
+    "date": "2026-06-18",
+    "seoTitle": "Importance of Non-Destructive Testing - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about importance of non-destructive testing in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding importance of non-destructive testing is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing importance of non-destructive testing, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in importance of non-destructive testing, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Importance of Non-Destructive Testing"
+  },
+  {
+    "id": "choosing-the-right-steel-grade",
+    "title": "Choosing the Right Steel Grade",
+    "slug": "choosing-the-right-steel-grade",
+    "date": "2026-06-15",
+    "seoTitle": "Choosing the Right Steel Grade - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about choosing the right steel grade in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding choosing the right steel grade is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing choosing the right steel grade, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in choosing the right steel grade, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Choosing the Right Steel Grade"
+  },
+  {
+    "id": "safety-protocols-in-fabrication",
+    "title": "Safety Protocols in Fabrication",
+    "slug": "safety-protocols-in-fabrication",
+    "date": "2026-06-12",
+    "seoTitle": "Safety Protocols in Fabrication - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about safety protocols in fabrication in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding safety protocols in fabrication is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing safety protocols in fabrication, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in safety protocols in fabrication, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Safety Protocols in Fabrication"
+  },
+  {
+    "id": "future-of-peb-in-india",
+    "title": "Future of PEB in India",
+    "slug": "future-of-peb-in-india",
+    "date": "2026-06-09",
+    "seoTitle": "Future of PEB in India - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about future of peb in india in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding future of peb in india is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing future of peb in india, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in future of peb in india, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Future of PEB in India"
+  },
+  {
+    "id": "corrosion-prevention-in-steel",
+    "title": "Corrosion Prevention in Steel",
+    "slug": "corrosion-prevention-in-steel",
+    "date": "2026-06-06",
+    "seoTitle": "Corrosion Prevention in Steel - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about corrosion prevention in steel in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding corrosion prevention in steel is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing corrosion prevention in steel, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in corrosion prevention in steel, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Corrosion Prevention in Steel"
+  },
+  {
+    "id": "welding-automation-trends",
+    "title": "Welding Automation Trends",
+    "slug": "welding-automation-trends",
+    "date": "2026-06-03",
+    "seoTitle": "Welding Automation Trends - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about welding automation trends in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding welding automation trends is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing welding automation trends, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in welding automation trends, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Welding Automation Trends"
+  },
+  {
+    "id": "custom-conveyor-solutions",
+    "title": "Custom Conveyor Solutions",
+    "slug": "custom-conveyor-solutions",
+    "date": "2026-05-31",
+    "seoTitle": "Custom Conveyor Solutions - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about custom conveyor solutions in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding custom conveyor solutions is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing custom conveyor solutions, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in custom conveyor solutions, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Custom Conveyor Solutions"
+  },
+  {
+    "id": "silo-design-considerations",
+    "title": "Silo Design Considerations",
+    "slug": "silo-design-considerations",
+    "date": "2026-05-28",
+    "seoTitle": "Silo Design Considerations - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about silo design considerations in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding silo design considerations is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing silo design considerations, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in silo design considerations, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Silo Design Considerations"
+  },
+  {
+    "id": "maintaining-industrial-sheds",
+    "title": "Maintaining Industrial Sheds",
+    "slug": "maintaining-industrial-sheds",
+    "date": "2026-05-25",
+    "seoTitle": "Maintaining Industrial Sheds - Ultimate Guide | KFab Infra",
+    "metaDescription": "Learn everything about maintaining industrial sheds in our comprehensive industrial engineering guide.",
+    "content": "## Introduction\n\nUnderstanding maintaining industrial sheds is crucial for modern industrial applications. In this comprehensive guide, we cover the essentials, best practices, and advanced techniques.\n\n## The Core Principles\n\nQuality engineering requires rigorous adherence to standards. When discussing maintaining industrial sheds, material selection and expert craftsmanship are non-negotiable.\n\n## Best Practices\n\n1. Follow IS standards\n2. Implement QA/QC at every stage\n3. Leverage modern technology\n\n## Conclusion\n\nBy prioritizing quality in maintaining industrial sheds, industries can achieve operational excellence and longevity in their infrastructure.",
+    "author": "Ritesh - Tech Lead & Engineering Expert",
+    "imageAlt": "Illustration of Maintaining Industrial Sheds"
+  }
+];
