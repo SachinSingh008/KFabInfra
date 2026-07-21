@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
+import SEO from "@/components/SEO";
+import { PAGE_SEO, getServicesSchema } from "@/lib/seo.config";
 import Footer from "@/components/Footer";
 import SectionHeader from "@/components/SectionHeader";
 import { StaggerContainer, StaggerItem } from "@/components/StaggerContainer";
@@ -195,7 +197,8 @@ const ServicesPage = () => {
   const [activeImage, setActiveImage] = useState<{ src: string; title: string } | null>(null);
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background pt-20">
+      <SEO {...PAGE_SEO.services} breadcrumbs={[{ name: "Home", url: "https://kfabinfraproject.site" }, { name: "Services", url: "https://kfabinfraproject.site/services" }]} extraSchema={getServicesSchema()} />
       <Navbar />
 
       {/* Hero */}

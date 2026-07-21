@@ -1,15 +1,19 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import { PAGE_SEO } from "@/lib/seo.config";
 import SectionHeader from "@/components/SectionHeader";
 import ScrollReveal from "@/components/ScrollReveal";
 import { StaggerContainer, StaggerItem } from "@/components/StaggerContainer";
 import { motion } from "framer-motion";
 import { Target, Eye, Heart, Users, Award, Zap } from "lucide-react";
 import teamIllustration from "@/assets/team_illustration.png";
+import teamImg from "@/assets/team.png";
 import metroGiderImg from "@/assets/metro gider.png";
 import pramodSinghImg from "@/assets/pramod_singh.png";
 import ajeetSinghImg from "@/assets/ajeet_singh.png";
 import abhishekSinghImg from "@/assets/abhishek_singh.png";
+import riteshImg from "@/assets/Ritesh.jpeg";
 import {
   ResponsiveContainer,
   PieChart,
@@ -86,10 +90,11 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 const AboutPage = () => {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background pt-20">
+      <SEO {...PAGE_SEO.about} breadcrumbs={[{ name: "Home", url: "https://kfabinfraproject.site" }, { name: "About", url: "https://kfabinfraproject.site/about" }]} />
       <Navbar />
 
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="pt-32 pb-20 bg-secondary text-foreground relative overflow-hidden">
         <div className="absolute inset-0 opacity-15">
           <img
@@ -128,11 +133,13 @@ const AboutPage = () => {
               <div className="relative">
                 <div className="aspect-[4/3] rounded-[24px] overflow-hidden shadow-[15px_15px_35px_rgba(0,0,0,0.3)] hover:shadow-[20px_20px_45px_rgba(0,0,0,0.4)] transition-all duration-300">
                   <img
-                    src={teamIllustration}
+                    src={teamImg}
                     alt="Our professional team"
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
+
+                {/* Badge */}
                 <div className="absolute -bottom-6 -right-6 bg-primary p-8 rounded-[24px] shadow-lg">
                   <div className="text-4xl font-serif font-bold text-slate-900">500+</div>
                   <div className="text-sm text-slate-900/70">Projects Completed</div>
@@ -216,7 +223,7 @@ const AboutPage = () => {
             subtitle="The visionaries and hands-on managers driving KFab Infra's success"
           />
 
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {[
               {
                 name: "Pramod Singh",
@@ -232,9 +239,15 @@ const AboutPage = () => {
               },
               {
                 name: "Abhishek Singh",
-                role: "Manager",
+                role: "Accountant Manager",
                 image: abhishekSinghImg,
                 description: "Abhishek handles project coordination, commercial contracts, and client relations. He ensures seamless communication from initial estimates to final delivery and erection. Abhishek's focus is on scaling operations, modernizing client support, and building long-term vendor partnerships across India's industrial sectors."
+              },
+              {
+                name: "Ritesh Singh",
+                role: "Tech Lead",
+                image: riteshImg,
+                description: "Ritesh leads the technology and digital transformation initiatives at KFab Infra. With a strong background in engineering and software systems, he bridges the gap between on-ground fabrication expertise and modern tech-driven project management. Ritesh drives process automation, quality tracking, and digital infrastructure to keep KFab at the forefront of industrial innovation."
               }
             ].map((owner, index) => (
               <ScrollReveal key={index} delay={index * 0.15}>

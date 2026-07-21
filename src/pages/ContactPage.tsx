@@ -3,11 +3,15 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Navbar from "@/components/Navbar";
+import SEO from "@/components/SEO";
+import { PAGE_SEO } from "@/lib/seo.config";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle, User } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { submitQuoteRequest } from "@/lib/db";
+import { sendEmailNotification } from "@/lib/email";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters").max(100),
@@ -57,20 +61,51 @@ const ContactPage = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast({
-      title: "Message Sent Successfully",
-      description: "We'll get back to you within 24 hours.",
-    });
-    reset();
-    setTimeout(() => setIsSubmitted(false), 3000);
+    try {
+      // 1. Submit to Firebase database
+      await submitQuoteRequest({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        company: data.company,
+        service: data.service,
+        message: data.message,
+      });
+
+      // 2. Trigger EmailJS notification
+      await sendEmailNotification({
+        subject: `🔔 New Quote Request — ${data.service}`,
+        from_name: data.name,
+        from_email: data.email,
+        phone: data.phone,
+        company: data.company,
+        service: data.service,
+        message: data.message,
+        type: "quote",
+      });
+
+      setIsSubmitted(true);
+      toast({
+        title: "Message Sent Successfully",
+        description: "We'll get back to you within 24 hours.",
+      });
+      reset();
+      setTimeout(() => setIsSubmitted(false), 3000);
+    } catch (error) {
+      console.error("Submit error:", error);
+      toast({
+        variant: "destructive",
+        title: "Submission Failed",
+        description: "An error occurred while sending your request. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background pt-20">
+      <SEO {...PAGE_SEO.contact} breadcrumbs={[{ name: "Home", url: "https://kfabinfraproject.site" }, { name: "Contact", url: "https://kfabinfraproject.site/contact" }]} />
       <Navbar />
 
       {/* Hero */}

@@ -1,4 +1,6 @@
 import Navbar from "@/components/Navbar";
+import SEO from "@/components/SEO";
+import { PAGE_SEO } from "@/lib/seo.config";
 import Footer from "@/components/Footer";
 import SectionHeader from "@/components/SectionHeader";
 import { StaggerContainer, StaggerItem } from "@/components/StaggerContainer";
@@ -75,7 +77,8 @@ const industries = [
 
 const IndustriesPage = () => {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background pt-20">
+      <SEO {...PAGE_SEO.industries} breadcrumbs={[{ name: "Home", url: "https://kfabinfraproject.site" }, { name: "Industries", url: "https://kfabinfraproject.site/industries" }]} />
       <Navbar />
 
       {/* Hero */}

@@ -1,113 +1,170 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
+import SEO from "@/components/SEO";
+import { PAGE_SEO } from "@/lib/seo.config";
 import Footer from "@/components/Footer";
 import SectionHeader from "@/components/SectionHeader";
 import ScrollReveal from "@/components/ScrollReveal";
 import { motion, AnimatePresence } from "framer-motion";
-import { Briefcase, MapPin, Clock, Calendar, CheckCircle, X, Send, Award, Users, Shield } from "lucide-react";
+import {
+  Briefcase,
+  MapPin,
+  Clock,
+  CheckCircle,
+  X,
+  Send,
+  Award,
+  Users,
+  Shield,
+  Trash2,
+  Plus,
+  Lock,
+} from "lucide-react";
 import { toast } from "sonner";
-
-interface Job {
-  id: string;
-  title: string;
-  department: string;
-  experience: string;
-  location: string;
-  type: string;
-  description: string;
-  responsibilities: string[];
-  requirements: string[];
-}
-
-const jobs: Job[] = [
-  {
-    id: "fab-manager",
-    title: "Fabrication Manager",
-    department: "Production & Shop Floor Operations",
-    experience: "8+ Years (Heavy Industrial Fabrication)",
-    location: "M.I.D.C, Jejuri, Pune",
-    type: "Full-Time (On-Site)",
-    description: "We are seeking a seasoned Fabrication Manager to oversee our 15,000 sq ft manufacturing shop floor. You will lead production timelines, coordinate cross-functional teams, and ensure heavy steel assemblies (including sugarcane vessels, silos, and structural girders) are fabricated to exact client specifications and safety codes.",
-    responsibilities: [
-      "Manage daily shop floor production activities and coordinate a team of 40+ fitters, welders, and technicians.",
-      "Ensure compliance with production schedules, safety regulations, and quality standards.",
-      "Interpret detailed structural drawings, client specs, and ASME/AWS engineering blueprints.",
-      "Optimize workshop resource allocation, material usage, and machinery maintenance schedules."
-    ],
-    requirements: [
-      "Bachelor's Degree or Diploma in Mechanical/Production Engineering.",
-      "Proven track record of managing heavy fabrication workshops, structural steel works, or pressure vessels.",
-      "Hands-on understanding of welding processes (MIG/TIG/Arc) and standard machine tools.",
-      "Strong leadership, communication, and shop floor safety management skills."
-    ]
-  },
-  {
-    id: "qc-supervisor",
-    title: "Quality Control Supervisor",
-    department: "Quality Assurance & Compliance",
-    experience: "5+ Years (QA/QC in Heavy Fabrication)",
-    location: "M.I.D.C, Jejuri, Pune",
-    type: "Full-Time (On-Site)",
-    description: "We are looking for an experienced Quality Control Supervisor to spearhead our QA workflow. You will conduct stage-wise inspections of steel assemblies, weld runs, and protective coatings to verify absolute compliance with client specifications and national/international standards.",
-    responsibilities: [
-      "Conduct stage-wise dimensional inspections and fit-up verifications at various stages of fabrication.",
-      "Perform and supervise non-destructive testing (NDT: Dye Penetrant, Visual, and coordinate Ultrasonic/Radiography testing).",
-      "Validate incoming raw material certifications (mill test reports) for steel grades.",
-      "Enforce standard operating procedures in compliance with ISO 9001:2015, IS 2062, and AWS D1.1 codes."
-    ],
-    requirements: [
-      "Diploma or Degree in Mechanical/Metallurgical Engineering.",
-      "Valid ASNT Level II certification in NDT methods (PT, UT, MT preferred).",
-      "Detailed knowledge of weld defects, measurement instruments, and surface coat testing.",
-      "Strong documentation skills and experience compiling Quality Assurance Plan (QAP) dossiers."
-    ]
-  }
-];
+import { getJobs, addJob, deleteJob, submitJobApplication, Job } from "@/lib/db";
+import { sendEmailNotification } from "@/lib/email";
 
 const CareersPage = () => {
+  const [jobsList, setJobsList] = useState<Job[]>([]);
+  const [isLoadingJobs, setIsLoadingJobs] = useState(true);
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     experience: "",
-    coverNote: ""
+    coverNote: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  // Admin Panel states
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [showPasscodeModal, setShowPasscodeModal] = useState(false);
+  const [showAddJobModal, setShowAddJobModal] = useState(false);
+  const [isAddingJob, setIsAddingJob] = useState(false);
+
+  // Fetch jobs from Firebase Firestore
+  useEffect(() => {
+    const loadJobs = async () => {
+      try {
+        const data = await getJobs();
+        setJobsList(data);
+      } catch (error) {
+        console.error("Failed to load jobs:", error);
+        toast.error("Failed to load live jobs. Displaying fallbacks.");
+      } finally {
+        setIsLoadingJobs(false);
+      }
+    };
+    loadJobs();
+  }, []);
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.phone || !formData.experience) {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.experience ||
+      !selectedJob
+    ) {
       toast.error("Please fill in all required fields.");
       return;
     }
-    
+
     setIsSubmitting(true);
 
-    // Simulate API request
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // 1. Save application to Firebase Firestore
+      await submitJobApplication({
+        jobId: selectedJob.id || "seeding-job",
+        jobTitle: selectedJob.title,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        experience: formData.experience,
+        coverNote: formData.coverNote,
+      });
+
+      // 2. Trigger email notification
+      await sendEmailNotification({
+        subject: `👷 New Job Application — ${selectedJob.title}`,
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        experience: formData.experience,
+        message: formData.coverNote || "No cover note provided.",
+        service: `Job Application: ${selectedJob.title}`,
+        type: "career",
+      });
+
       setSelectedJob(null);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        experience: "",
-        coverNote: ""
-      });
+      setFormData({ name: "", email: "", phone: "", experience: "", coverNote: "" });
       toast.success("Application Submitted Successfully!", {
-        description: "Our hiring team will review your profile and contact you soon."
+        description: "Our hiring team will review your profile and contact you soon.",
       });
-    }, 1500);
+    } catch (error) {
+      console.error("Error submitting application:", error);
+      toast.error("Failed to submit application. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleAddJobSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const target = e.target as any;
+    const newJob = {
+      title: target.title.value,
+      department: target.department.value,
+      experience: target.experience.value,
+      type: target.type.value,
+      location: target.location.value,
+      description: target.description.value,
+      responsibilities: target.responsibilities.value
+        .split("\n")
+        .filter((l: string) => l.trim() !== ""),
+      requirements: target.requirements.value
+        .split("\n")
+        .filter((l: string) => l.trim() !== ""),
+    };
+
+    setIsAddingJob(true);
+    try {
+      const newId = await addJob(newJob);
+      setJobsList((prev) => [...prev, { ...newJob, id: newId }]);
+      toast.success("Job Opening created successfully.");
+      setShowAddJobModal(false);
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to create job.");
+    } finally {
+      setIsAddingJob(false);
+    }
+  };
+
+  const handleDeleteJob = async (jobId: string) => {
+    if (!confirm("Are you sure you want to delete this job opening?")) return;
+    try {
+      await deleteJob(jobId);
+      setJobsList((prev) => prev.filter((j) => j.id !== jobId));
+      toast.success("Job Opening deleted successfully.");
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to delete job.");
+    }
   };
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background pt-20">
+      <SEO {...PAGE_SEO.careers} breadcrumbs={[{ name: "Home", url: "https://kfabinfraproject.site" }, { name: "Careers", url: "https://kfabinfraproject.site/careers" }]} />
       <Navbar />
 
       {/* Hero */}
@@ -134,8 +191,9 @@ const CareersPage = () => {
               <span className="text-primary">Engineering Legacy</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              At KFab, we believe in honest work, structural reliability, and the pride of hands-on craftsmanship. 
-              Join a dedicated team that manufactures the backbone of India's core industrial sectors.
+              At KFab, we believe in honest work, structural reliability, and the
+              pride of hands-on craftsmanship. Join a dedicated team that
+              manufactures the backbone of India's core industrial sectors.
             </p>
           </motion.div>
         </div>
@@ -152,7 +210,8 @@ const CareersPage = () => {
                 </div>
                 <h3 className="text-lg font-serif font-bold mb-2">Precision Pride</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  We don't cut corners. We build structures that endure, valuing details in every weld, cut, and coating.
+                  We don't cut corners. We build structures that endure, valuing details
+                  in every weld, cut, and coating.
                 </p>
               </div>
             </ScrollReveal>
@@ -164,7 +223,8 @@ const CareersPage = () => {
                 </div>
                 <h3 className="text-lg font-serif font-bold mb-2">Hands-on Culture</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Work directly alongside experienced engineers and tradesmen in a collaborative shop floor environment.
+                  Work directly alongside experienced engineers and tradesmen in a
+                  collaborative shop floor environment.
                 </p>
               </div>
             </ScrollReveal>
@@ -176,7 +236,8 @@ const CareersPage = () => {
                 </div>
                 <h3 className="text-lg font-serif font-bold mb-2">Safety First</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Your safety is our top priority. We operate under strict safety guidelines with high-grade protective equipment.
+                  Your safety is our top priority. We operate under strict safety
+                  guidelines with high-grade protective equipment.
                 </p>
               </div>
             </ScrollReveal>
@@ -187,56 +248,124 @@ const CareersPage = () => {
       {/* Open Opportunities */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeader
-            title="Open Opportunities"
-            subtitle="Explore career pathways at our Jejuri, Pune facility"
-          />
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
+            <div className="flex-1">
+              <div className="divider-gold mb-4" />
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
+                Open Opportunities
+              </h2>
+              <p className="text-muted-foreground text-sm mt-1">
+                Explore career pathways at our Jejuri, Pune facility
+              </p>
+            </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 mt-12 max-w-5xl mx-auto">
-            {jobs.map((job, index) => (
-              <ScrollReveal key={job.id} delay={index * 0.1}>
-                <div className="card-premium p-6 md:p-8 flex flex-col h-full rounded-[24px] border border-border/50 hover:border-primary/40 transition-all duration-300">
-                  <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-primary px-3 py-1 rounded-full bg-primary/10">
-                      {job.department}
-                    </span>
-                    <span className="text-xs text-muted-foreground flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5" />
-                      {job.type}
-                    </span>
-                  </div>
-
-                  <h3 className="text-2xl font-serif font-bold mb-3 text-foreground">
-                    {job.title}
-                  </h3>
-
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 mb-6 text-sm text-muted-foreground">
-                    <span className="flex items-center gap-1.5">
-                      <Briefcase className="w-4 h-4 text-primary" />
-                      {job.experience}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <MapPin className="w-4 h-4 text-primary" />
-                      {job.location}
-                    </span>
-                  </div>
-
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
-                    {job.description}
-                  </p>
-
-                  <div className="border-t border-border/50 pt-6 flex items-center justify-between">
-                    <button
-                      onClick={() => setSelectedJob(job)}
-                      className="btn-primary w-full text-center py-3 rounded-[12px] font-medium transition-all hover:bg-primary/95"
-                    >
-                      View Details & Apply
-                    </button>
-                  </div>
+            {/* Admin Controls Toggle */}
+            <div className="flex items-center gap-4">
+              {isAdmin ? (
+                <div className="flex items-center gap-4">
+                  <span className="text-xs font-semibold px-3 py-1 bg-green-500/10 text-green-600 rounded-full border border-green-500/20">
+                    Admin Mode
+                  </span>
+                  <button
+                    onClick={() => setIsAdmin(false)}
+                    className="text-xs text-muted-foreground hover:text-foreground font-medium underline"
+                  >
+                    Logout
+                  </button>
                 </div>
-              </ScrollReveal>
-            ))}
+              ) : (
+                <button
+                  onClick={() => setShowPasscodeModal(true)}
+                  className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors font-medium border border-border/80 px-3 py-1.5 rounded-full hover:bg-secondary"
+                >
+                  <Lock className="w-3.5 h-3.5" />
+                  Admin Panel
+                </button>
+              )}
+            </div>
           </div>
+
+          {isAdmin && (
+            <div className="flex justify-end mb-8 max-w-5xl mx-auto">
+              <button
+                onClick={() => setShowAddJobModal(true)}
+                className="flex items-center gap-2 btn-gold py-2.5 px-5 rounded-[12px] font-semibold text-sm shadow-md"
+              >
+                <Plus className="w-4 h-4" />
+                Add New Job Opening
+              </button>
+            </div>
+          )}
+
+          {isLoadingJobs ? (
+            <div className="flex flex-col items-center justify-center py-16">
+              <div className="w-10 h-10 border-4 border-primary/30 border-t-primary rounded-full animate-spin mb-4" />
+              <p className="text-muted-foreground text-sm">Loading active job list...</p>
+            </div>
+          ) : jobsList.length === 0 ? (
+            <div className="text-center py-16 max-w-xl mx-auto border border-dashed border-border rounded-[24px]">
+              <Briefcase className="w-12 h-12 text-muted-foreground/30 mx-auto mb-4" />
+              <h3 className="text-lg font-serif font-bold text-foreground">No Current Openings</h3>
+              <p className="text-muted-foreground text-sm mt-1">
+                There are no open roles at this time. Check back later or write to us directly.
+              </p>
+            </div>
+          ) : (
+            <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {jobsList.map((job, index) => (
+                <ScrollReveal key={job.id} delay={index * 0.1}>
+                  <div className="card-premium p-6 md:p-8 flex flex-col h-full rounded-[24px] border border-border/50 hover:border-primary/40 transition-all duration-300">
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-primary px-3 py-1 rounded-full bg-primary/10">
+                        {job.department}
+                      </span>
+                      <span className="text-xs text-muted-foreground flex items-center gap-1">
+                        <Clock className="w-3.5 h-3.5" />
+                        {job.type}
+                      </span>
+                    </div>
+
+                    <h3 className="text-2xl font-serif font-bold mb-3 text-foreground">
+                      {job.title}
+                    </h3>
+
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 mb-6 text-sm text-muted-foreground">
+                      <span className="flex items-center gap-1.5">
+                        <Briefcase className="w-4 h-4 text-primary" />
+                        {job.experience}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <MapPin className="w-4 h-4 text-primary" />
+                        {job.location}
+                      </span>
+                    </div>
+
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
+                      {job.description}
+                    </p>
+
+                    <div className="border-t border-border/50 pt-6 flex gap-3 items-center justify-between">
+                      <button
+                        onClick={() => setSelectedJob(job)}
+                        className="btn-primary flex-1 text-center py-3 rounded-[12px] font-medium transition-all hover:bg-primary/95"
+                      >
+                        View Details & Apply
+                      </button>
+                      {isAdmin && (
+                        <button
+                          onClick={() => job.id && handleDeleteJob(job.id)}
+                          className="p-3 bg-destructive/10 text-destructive rounded-[12px] hover:bg-destructive/25 transition-colors"
+                          title="Delete Job"
+                        >
+                          <Trash2 className="w-5 h-5" />
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -422,6 +551,91 @@ const CareersPage = () => {
           </div>
         )}
       </AnimatePresence>
+
+      {/* Passcode Verification Modal */}
+      {showPasscodeModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setShowPasscodeModal(false)} />
+          <div className="relative bg-background border border-border rounded-[20px] p-6 max-w-sm w-full shadow-2xl z-10">
+            <h3 className="text-lg font-serif font-bold mb-4 flex items-center gap-2 text-foreground">
+              <Lock className="w-5 h-5 text-primary" /> Admin Verification
+            </h3>
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              const passcode = (e.target as any).passcode.value;
+              if (passcode === "Champion008") {
+                setIsAdmin(true);
+                setShowPasscodeModal(false);
+                toast.success("Admin access granted.");
+              } else {
+                toast.error("Incorrect passcode.");
+              }
+            }}>
+              <input 
+                name="passcode"
+                type="password"
+                required
+                placeholder="Enter Admin Passcode"
+                className="w-full bg-secondary border border-border/80 rounded-[10px] px-4 py-2.5 text-sm focus:outline-none focus:border-primary/50 text-foreground mb-4"
+              />
+              <div className="flex justify-end gap-3">
+                <button type="button" onClick={() => setShowPasscodeModal(false)} className="text-sm font-medium text-muted-foreground px-4 py-2 hover:text-foreground">Cancel</button>
+                <button type="submit" className="btn-primary text-sm font-semibold py-2 px-5 rounded-[10px]">Verify</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Add Job Opening Modal */}
+      {showAddJobModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setShowAddJobModal(false)} />
+          <div className="relative bg-background border border-border rounded-[24px] p-6 md:p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl z-10 scrollbar-thin">
+            <h3 className="text-2xl font-serif font-bold mb-6 text-foreground">Create New Job Opening</h3>
+            <form onSubmit={handleAddJobSubmit} className="space-y-4">
+              <div>
+                <label className="block text-xs font-semibold text-muted-foreground mb-1">Job Title *</label>
+                <input name="title" required placeholder="e.g. Fabrication Engineer" className="w-full bg-secondary border border-border/80 rounded-[10px] px-4 py-2 text-sm focus:outline-none text-foreground" />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-muted-foreground mb-1">Department *</label>
+                <input name="department" required placeholder="e.g. Operations" className="w-full bg-secondary border border-border/80 rounded-[10px] px-4 py-2 text-sm focus:outline-none text-foreground" />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold text-muted-foreground mb-1">Experience Required *</label>
+                  <input name="experience" required placeholder="e.g. 5+ Years" className="w-full bg-secondary border border-border/80 rounded-[10px] px-4 py-2 text-sm focus:outline-none text-foreground" />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-muted-foreground mb-1">Job Type *</label>
+                  <input name="type" required defaultValue="Full-Time (On-Site)" className="w-full bg-secondary border border-border/80 rounded-[10px] px-4 py-2 text-sm focus:outline-none text-foreground" />
+                </div>
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-muted-foreground mb-1">Location *</label>
+                <input name="location" required defaultValue="M.I.D.C, Jejuri, Pune" className="w-full bg-secondary border border-border/80 rounded-[10px] px-4 py-2 text-sm focus:outline-none text-foreground" />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-muted-foreground mb-1">Role Description *</label>
+                <textarea name="description" rows={3} required placeholder="Describe the role overview..." className="w-full bg-secondary border border-border/80 rounded-[10px] px-4 py-2 text-sm focus:outline-none text-foreground resize-none" />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-muted-foreground mb-1">Key Responsibilities (one per line) *</label>
+                <textarea name="responsibilities" rows={3} required placeholder="Responsible for..." className="w-full bg-secondary border border-border/80 rounded-[10px] px-4 py-2 text-sm focus:outline-none text-foreground resize-none" />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-muted-foreground mb-1">Required Credentials (one per line) *</label>
+                <textarea name="requirements" rows={3} required placeholder="Must have..." className="w-full bg-secondary border border-border/80 rounded-[10px] px-4 py-2 text-sm focus:outline-none text-foreground resize-none" />
+              </div>
+              <div className="flex justify-end gap-3 pt-4">
+                <button type="button" onClick={() => setShowAddJobModal(false)} className="text-sm font-medium text-muted-foreground px-4 py-2 hover:text-foreground">Cancel</button>
+                <button type="submit" disabled={isAddingJob} className="btn-primary text-sm font-semibold py-2 px-5 rounded-[10px]">{isAddingJob ? "Creating..." : "Create Job"}</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </main>
