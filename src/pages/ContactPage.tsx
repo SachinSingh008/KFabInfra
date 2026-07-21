@@ -161,16 +161,10 @@ const ContactPage = () => {
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
                       <a
-                        href="mailto:kumarfabricators4@gmail.com"
+                        href="mailto:kfab.infraproject@gmail.com"
                         className="text-muted-foreground text-sm hover:text-primary transition-colors block"
                       >
-                        kumarfabricators4@gmail.com
-                      </a>
-                      <a
-                        href="mailto:acckumarfabricators4@gmail.com"
-                        className="text-muted-foreground text-sm hover:text-primary transition-colors block"
-                      >
-                        acckumarfabricators4@gmail.com
+                        kfab.infraproject@gmail.com
                       </a>
                     </div>
                   </div>
