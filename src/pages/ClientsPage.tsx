@@ -5,7 +5,8 @@ import Footer from "@/components/Footer";
 import SectionHeader from "@/components/SectionHeader";
 import ScrollReveal from "@/components/ScrollReveal";
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
+import { Quote, Building2 } from "lucide-react";
+import { useState } from "react";
 
 const clients = [
   { name: "Indiana Gratings Pvt. Ltd.", domain: "indianagroup.com" },
@@ -50,6 +51,32 @@ const testimonials = [
     title: "Thermax Ltd.",
   },
 ];
+
+const ClientLogo = ({ client }: { client: { name: string, domain: string } }) => {
+  const [imgError, setImgError] = useState(0);
+
+  // Try Clearbit first (0), then Google Favicon (1), then fallback icon (2)
+  if (imgError >= 2) {
+    return (
+      <div className="h-24 md:h-32 w-full flex items-center justify-center bg-muted/30 rounded-lg">
+        <Building2 className="w-12 h-12 text-muted-foreground/50" />
+      </div>
+    );
+  }
+
+  const src = imgError === 0 
+    ? `https://logo.clearbit.com/${client.domain}`
+    : `https://www.google.com/s2/favicons?domain=${client.domain}&sz=128`;
+
+  return (
+    <img 
+      src={src} 
+      alt={client.name} 
+      className="h-24 md:h-32 w-auto object-contain transition-all duration-300" 
+      onError={() => setImgError(prev => prev + 1)}
+    />
+  );
+};
 
 const ClientsPage = () => {
   return (
@@ -104,15 +131,7 @@ const ClientsPage = () => {
                   className="p-4 flex flex-col items-center justify-center gap-4 transition-all duration-300 py-6"
                   title={client.name}
                 >
-                  <img 
-                    src={`https://logo.clearbit.com/${client.domain}`} 
-                    alt={client.name} 
-                    className="h-24 md:h-32 w-auto object-contain transition-all duration-300" 
-                    onError={(e) => { 
-                      e.currentTarget.onerror = null; 
-                      e.currentTarget.src = `https://www.google.com/s2/favicons?domain=${client.domain}&sz=128`; 
-                    }} 
-                  />
+                  <ClientLogo client={client} />
                   <span className="text-sm md:text-base font-bold text-foreground/85 text-center">
                     {client.name}
                   </span>
