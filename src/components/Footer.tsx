@@ -7,7 +7,7 @@ const footerLinks = {
     { name: "About Us", path: "/about" },
     { name: "Our Team", path: "/about" },
     { name: "Quality Assurance", path: "/quality" },
-    { name: "Careers", path: "/contact" },
+    { name: "Careers", path: "/careers" },
   ],
   services: [
     { name: "Sugar Vessels", path: "/services" },

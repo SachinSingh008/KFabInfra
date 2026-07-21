@@ -74,15 +74,15 @@ const ContactPage = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-charcoal text-creme relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      <section className="pt-32 pb-20 bg-secondary text-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-15">
           <img
             src="https://images.unsplash.com/photo-1504917595217-d4dc5ebb6122?w=1200&q=80"
             alt=""
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-secondary/80 to-secondary" />
         <div className="container mx-auto px-4 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -94,9 +94,9 @@ const ContactPage = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold mb-6">
               Get in
               <br />
-              <span className="gold-text">Touch</span>
+              <span className="text-primary">Touch</span>
             </h1>
-            <p className="text-lg text-creme/70 leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Ready to discuss your next project? Contact us for a consultation
               and discover how we can bring your vision to life.
             </p>
@@ -307,7 +307,7 @@ const ContactPage = () => {
                     >
                       {isSubmitting ? (
                         <>
-                          <div className="w-5 h-5 border-2 border-charcoal/30 border-t-charcoal rounded-full animate-spin" />
+                          <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
                           <span>Sending...</span>
                         </>
                       ) : isSubmitted ? (

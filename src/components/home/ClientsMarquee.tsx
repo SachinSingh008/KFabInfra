@@ -59,13 +59,13 @@ const ClientsMarquee = () => {
               <img 
                 src={`https://logo.clearbit.com/${client.domain}`} 
                 alt={client.name} 
-                className="max-h-16 md:max-h-20 max-w-full object-contain transition-all duration-300" 
+                className="h-20 md:h-24 w-auto object-contain transition-all duration-300" 
                 onError={(e) => { 
                   e.currentTarget.onerror = null; 
                   e.currentTarget.src = `https://www.google.com/s2/favicons?domain=${client.domain}&sz=128`; 
                 }} 
               />
-              <span className="text-xs md:text-sm font-medium text-foreground/70 text-center">
+              <span className="text-xs md:text-sm font-bold text-foreground/70 text-center">
                 {client.name}
               </span>
             </div>
@@ -83,13 +83,13 @@ const ClientsMarquee = () => {
               <img 
                 src={`https://logo.clearbit.com/${client.domain}`} 
                 alt={client.name} 
-                className="max-h-16 md:max-h-20 max-w-full object-contain transition-all duration-300" 
+                className="h-20 md:h-24 w-auto object-contain transition-all duration-300" 
                 onError={(e) => { 
                   e.currentTarget.onerror = null; 
                   e.currentTarget.src = `https://www.google.com/s2/favicons?domain=${client.domain}&sz=128`; 
                 }} 
               />
-              <span className="text-xs md:text-sm font-medium text-foreground/70 text-center">
+              <span className="text-xs md:text-sm font-bold text-foreground/70 text-center">
                 {client.name}
               </span>
             </div>

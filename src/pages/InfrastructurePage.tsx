@@ -5,6 +5,10 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { StaggerContainer, StaggerItem } from "@/components/StaggerContainer";
 import { motion } from "framer-motion";
 import { Zap, Users, Ruler, Cog, Gauge, HardHat, MapPin } from "lucide-react";
+import curveShedImg from "@/assets/curve shed.png";
+import railwayGudderAssemblyImg from "@/assets/railway gudder assebly.png";
+import goliathCraneLegImg from "@/assets/goliath crane leg.jpeg";
+import desielTankFabImg from "@/assets/desiel tank fab.jpeg";
 
 const stats = [
   { icon: Ruler, value: "15,000", label: "Sq Ft Facility", suffix: "" },
@@ -32,15 +36,15 @@ const InfrastructurePage = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-charcoal text-creme relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      <section className="pt-32 pb-20 bg-secondary text-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-15">
           <img
             src="https://images.unsplash.com/photo-1504917595217-d4dc5ebb6122?w=1200&q=80"
             alt=""
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-secondary/80 to-secondary" />
         <div className="container mx-auto px-4 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -52,9 +56,9 @@ const InfrastructurePage = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold mb-6">
               Our
               <br />
-              <span className="gold-text">Infrastructure</span>
+              <span className="text-primary">Infrastructure</span>
             </h1>
-            <p className="text-lg text-creme/70 leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               State-of-the-art 15,000 Sq Ft facility in Jejuri, Pune equipped with
               modern machinery and skilled workforce to handle any fabrication challenge.
             </p>
@@ -69,13 +73,13 @@ const InfrastructurePage = () => {
             {stats.map((stat, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
                 <div className="text-center">
-                  <div className="w-14 h-14 mx-auto rounded-full bg-charcoal/10 flex items-center justify-center mb-4">
-                    <stat.icon className="w-7 h-7 text-charcoal" />
+                  <div className="w-14 h-14 mx-auto rounded-full bg-slate-900/10 flex items-center justify-center mb-4">
+                    <stat.icon className="w-7 h-7 text-slate-900" />
                   </div>
-                  <div className="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-1">
+                  <div className="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-1">
                     {stat.value}{stat.suffix}
                   </div>
-                  <div className="text-charcoal/70">{stat.label}</div>
+                  <div className="text-slate-900/70">{stat.label}</div>
                 </div>
               </ScrollReveal>
             ))}
@@ -90,34 +94,34 @@ const InfrastructurePage = () => {
             <ScrollReveal direction="left">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
-                  <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                  <div className="aspect-[4/3] rounded-[20px] overflow-hidden border border-border/10 shadow-md">
                     <img
-                      src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&q=80"
-                      alt="Workshop"
-                      className="w-full h-full object-cover"
+                      src={curveShedImg}
+                      alt="Curve Shed Structure"
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
                   </div>
-                  <div className="aspect-square rounded-lg overflow-hidden">
+                  <div className="aspect-square rounded-[20px] overflow-hidden border border-border/10 shadow-md">
                     <img
-                      src="https://images.unsplash.com/photo-1567789884554-0b844b597180?w=400&q=80"
-                      alt="Machinery"
-                      className="w-full h-full object-cover"
+                      src={railwayGudderAssemblyImg}
+                      alt="Railway Girder Assembly"
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
                   </div>
                 </div>
                 <div className="space-y-4 pt-8">
-                  <div className="aspect-square rounded-lg overflow-hidden">
+                  <div className="aspect-square rounded-[20px] overflow-hidden border border-border/10 shadow-md">
                     <img
-                      src="https://images.unsplash.com/photo-1504917595217-d4dc5ebb6122?w=400&q=80"
-                      alt="Welding"
-                      className="w-full h-full object-cover"
+                      src={goliathCraneLegImg}
+                      alt="Goliath Crane Leg Fabrication"
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
                   </div>
-                  <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                  <div className="aspect-[4/3] rounded-[20px] overflow-hidden border border-border/10 shadow-md">
                     <img
-                      src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80"
-                      alt="Facility"
-                      className="w-full h-full object-cover"
+                      src={desielTankFabImg}
+                      alt="Diesel Tank Fabrication"
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
                   </div>
                 </div>
@@ -130,22 +134,22 @@ const InfrastructurePage = () => {
                 World-Class <span className="text-primary">Manufacturing Facility</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Our 15,000 sq ft manufacturing facility is strategically located
-                in M.I.D.C, Jejuri, Pune, providing excellent connectivity
-                to major industrial hubs across India.
+                Our 15,000 sq ft workshop in M.I.D.C Jejuri, Pune is designed specifically for heavy industrial fabrication. 
+                Strategically positioned, the plant offers direct transport access to support logistics and project 
+                dispatch to major industrial corridors across the country.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Equipped with 65 HP power supply, heavy-duty cranes, precision cutting machines, and
-                advanced welding systems, we handle projects of any scale with
-                consistent quality and efficiency.
+                Operating with a steady 65 HP power connection, high-capacity material handling systems, and calibrated 
+                welding units, we emphasize safe, consistent, and highly precise assembly. We build with the long-term 
+                in mind, ensuring every structure is built to specification and double-checked for quality.
               </p>
 
               <div className="space-y-4">
                 {[
-                  "Dedicated fabrication bays for large assemblies",
-                  "15,000 Sq Ft shed area for manufacturing",
-                  "Raw material storage with inventory management",
-                  "8 specialized departments with skilled workforce",
+                  "Clear-span assembly bays designed for safe, heavy-duty structure handling",
+                  "15,000 Sq Ft of covered shop floor for weather-protected manufacturing",
+                  "Organized raw material yard with trace-controlled inventory logs",
+                  "Eight dedicated work departments led by certified, hands-on tradesmen",
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary" />
@@ -183,15 +187,15 @@ const InfrastructurePage = () => {
       </section>
 
       {/* Location */}
-      <section className="py-24 bg-charcoal text-creme">
+      <section className="py-24 bg-secondary text-foreground">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
               <div className="divider-gold mb-6" />
               <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-6">
-                <span className="gold-text">Plant Location</span>
+                <span className="text-primary">Plant Location</span>
               </h2>
-              <p className="text-creme/70 leading-relaxed mb-6">
+              <p className="text-muted-foreground leading-relaxed mb-6">
                 Strategically located in Pune's industrial corridor with
                 excellent connectivity to major cities and ports.
               </p>
@@ -202,7 +206,7 @@ const InfrastructurePage = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Registered Office & Workspace</h4>
-                    <p className="text-creme/60 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       C-46, M.I.D.C, Jejuri,<br />
                       Pune, Maharashtra 412303
                     </p>
@@ -214,7 +218,7 @@ const InfrastructurePage = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">GSTIN</h4>
-                    <p className="text-creme/60 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       27BLNPS7306C1ZX
                     </p>
                   </div>
@@ -223,7 +227,7 @@ const InfrastructurePage = () => {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="aspect-video rounded-lg overflow-hidden border border-creme/10">
+              <div className="aspect-video rounded-lg overflow-hidden border border-border">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30284.91893561747!2d74.12!3d18.27!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9e89c2a9f4d%3A0x5b25c67c08c0d4e!2sJejuri%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin"
                   width="100%"

@@ -67,6 +67,8 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        charcoal: "#12151c",
+        creme: "#FAF7F2",
       },
       borderRadius: {
         lg: "0",

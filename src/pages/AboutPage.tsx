@@ -5,13 +5,33 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { StaggerContainer, StaggerItem } from "@/components/StaggerContainer";
 import { motion } from "framer-motion";
 import { Target, Eye, Heart, Users, Award, Zap } from "lucide-react";
+import teamIllustration from "@/assets/team_illustration.png";
+import metroGiderImg from "@/assets/metro gider.png";
+import pramodSinghImg from "@/assets/pramod_singh.png";
+import ajeetSinghImg from "@/assets/ajeet_singh.png";
+import abhishekSinghImg from "@/assets/abhishek_singh.png";
+import {
+  ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell,
+  Tooltip,
+  Legend,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  AreaChart,
+  Area
+} from "recharts";
 
 const milestones = [
-  { year: "2004", title: "Foundation", description: "KFab Infra Project PVT LTD established in Jejuri, Pune" },
-  { year: "2008", title: "Expansion", description: "Doubled capacity with new machinery" },
-  { year: "2013", title: "Major Projects", description: "Started serving metro & railway sectors" },
+  { year: "1998", title: "Foundation", description: "KFab Infra Project PVT LTD established in Jejuri, Pune" },
+  { year: "2005", title: "Expansion", description: "Doubled capacity with new machinery" },
+  { year: "2012", title: "Major Projects", description: "Started serving metro & railway sectors" },
   { year: "2018", title: "Milestone", description: "Completed 300+ industrial projects" },
-  { year: "2024", title: "20 Years", description: "Celebrating two decades of excellence" },
+  { year: "2024", title: "25+ Years", description: "Celebrating over a quarter century of excellence" },
 ];
 
 const values = [
@@ -22,15 +42,47 @@ const values = [
 ];
 
 const workforceData = [
-  { role: "Helpers", percentage: 23 },
-  { role: "Welders", percentage: 17 },
-  { role: "Supervisors", percentage: 13 },
-  { role: "Engineers", percentage: 13 },
-  { role: "Painters", percentage: 10 },
-  { role: "Cutters", percentage: 9 },
-  { role: "Fitters", percentage: 8 },
-  { role: "Others", percentage: 7 },
+  { name: "Helpers", value: 23, color: "#D4AF37" },
+  { name: "Welders", value: 17, color: "#CD7F32" },
+  { name: "Supervisors", value: 13, color: "#1E3A8A" },
+  { name: "Engineers", value: 13, color: "#3B82F6" },
+  { name: "Painters", value: 10, color: "#10B981" },
+  { name: "Cutters", value: 9, color: "#F59E0B" },
+  { name: "Fitters", value: 8, color: "#6366F1" },
+  { name: "Others", value: 7, color: "#64748B" },
 ];
+
+const productionData = [
+  { year: "2019", tonnage: 100 },
+  { year: "2020", tonnage: 55 },
+  { year: "2021", tonnage: 50 },
+  { year: "2022", tonnage: 90 },
+  { year: "2023", tonnage: 115 },
+  { year: "2024", tonnage: 130 },
+];
+
+const CustomTooltip = ({ active, payload, label }: any) => {
+  if (active && payload && payload.length) {
+    const data = payload[0].payload;
+    const value = payload[0].value;
+    
+    let labelText = "";
+    if (data.sector) {
+      labelText = `${data.sector}: ${value}%`;
+    } else if (data.name) {
+      labelText = `${data.name}: ${value}%`;
+    } else {
+      labelText = `${payload[0].payload.year || label || "Production"}: ${value} Tons`;
+    }
+
+    return (
+      <div className="bg-background border border-border p-3 rounded-lg shadow-xl text-foreground text-xs">
+        <p className="text-primary font-bold">{labelText}</p>
+      </div>
+    );
+  }
+  return null;
+};
 
 const AboutPage = () => {
   return (
@@ -38,15 +90,15 @@ const AboutPage = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-charcoal text-creme relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      <section className="pt-32 pb-20 bg-secondary text-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-15">
           <img
-            src="https://images.unsplash.com/photo-504917595217-d4dc5ebb6122?w=1200&q=80"
-            alt=""
+            src={metroGiderImg}
+            alt="Metro girder fabrication"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-secondary/80 to-secondary" />
         <div className="container mx-auto px-4 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -58,10 +110,10 @@ const AboutPage = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold mb-6">
               Crafting Industrial
               <br />
-              <span className="gold-text">Excellence Since 2004</span>
+              <span className="text-primary">Excellence Since 1998</span>
             </h1>
-            <p className="text-lg text-creme/70 leading-relaxed">
-              Two decades of engineering precision and unwavering commitment to quality
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Over two decades of engineering precision and unwavering commitment to quality
               have made us one of India's most trusted names in heavy fabrication.
             </p>
           </motion.div>
@@ -74,16 +126,16 @@ const AboutPage = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <ScrollReveal direction="left">
               <div className="relative">
-                <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                <div className="aspect-[4/3] rounded-[24px] overflow-hidden shadow-[15px_15px_35px_rgba(0,0,0,0.3)] hover:shadow-[20px_20px_45px_rgba(0,0,0,0.4)] transition-all duration-300">
                   <img
-                    src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80"
-                    alt="Our manufacturing facility"
-                    className="w-full h-full object-cover"
+                    src={teamIllustration}
+                    alt="Our professional team"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
-                <div className="absolute -bottom-6 -right-6 bg-primary p-8 rounded-lg">
-                  <div className="text-4xl font-serif font-bold text-charcoal">500+</div>
-                  <div className="text-sm text-charcoal/70">Projects Completed</div>
+                <div className="absolute -bottom-6 -right-6 bg-primary p-8 rounded-[24px] shadow-lg">
+                  <div className="text-4xl font-serif font-bold text-slate-900">500+</div>
+                  <div className="text-sm text-slate-900/70">Projects Completed</div>
                 </div>
               </div>
             </ScrollReveal>
@@ -94,18 +146,20 @@ const AboutPage = () => {
                 Our Story
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Founded in 2004 by visionary engineers,  KFab Infra Project PVT LTDrs began
-                as a focused workshop with a big dream – to deliver world-class heavy
-                fabrication solutions that power India's industrial growth.
+                It started in 1998 with a simple workbench, a set of welding torches, and a conviction: 
+                that heavy industrial fabrication demands both absolute precision and a craftsman's pride. 
+                KFab Infra Project PVT LTD began as a small, focused workshop in Jejuri, Pune. 
+                We didn't set out to be the largest, but we resolved to be the most reliable.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Today, we stand as a testament to that vision. Our 15,000 sq ft
-                state-of-the-art facility in Jejuri, Pune houses cutting-edge machinery
-                operated by skilled craftsmen who bring decades of expertise to every project.
+                Today, that single workbench has grown into a 15,000 sq. ft. state-of-the-art facility. 
+                Yet, our core remains unchanged. We combine advanced machinery with the hand-calibrated 
+                skill of veteran fabricators. Every column, silo, and girder we build is a testament 
+                to honest work, engineered to withstand the rigorous demands of India's core infrastructure.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                From sugar mills to metro rail infrastructure, our fabrications form
-                the backbone of industries that drive the nation's economy.
+                From heavy-duty sugarcane vessels to critical metro girders, our work stands quietly 
+                but strongly at the center of the industries that build the nation.
               </p>
             </ScrollReveal>
           </div>
@@ -117,7 +171,7 @@ const AboutPage = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader
             title="Mission & Vision"
-            subtitle="Guided by purpose, driven by excellence"
+            subtitle="Driven by hand-crafted precision, guided by long-term trust"
           />
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -128,10 +182,10 @@ const AboutPage = () => {
                 </div>
                 <h3 className="text-2xl font-serif font-semibold mb-4">Our Mission</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To provide our clients with superior-quality fabricated products that meet 
-                  their specific requirements. We aim to deliver innovative solutions while 
-                  adhering to the highest industry standards, ensuring customer satisfaction, 
-                  and building long-term relationships.
+                  To deliver heavy fabrication work that engineering teams can trust without hesitation. 
+                  We build to last, fusing rigorous quality standards with flexible, custom engineering. 
+                  We don't just supply metal structures—we support our clients' daily operations through 
+                  reliability, technical transparency, and a commitment to keeping our promises.
                 </p>
               </div>
             </ScrollReveal>
@@ -143,10 +197,10 @@ const AboutPage = () => {
                 </div>
                 <h3 className="text-2xl font-serif font-semibold mb-4">Our Vision</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To be India's most trusted heavy fabrication partner, recognized
-                  for our engineering excellence, innovation, and unwavering
-                  commitment to quality across Sugar, Cement, Paper, Chemical
-                  & Handling Equipment industries.
+                  To remain India’s premier choice for complex and heavy fabrication, recognized 
+                  not just for our machinery, but for the integrity of our welds and the longevity 
+                  of our partnerships. We aim to support the next generation of sugar, cement, power, 
+                  and infrastructure projects with honest craftsmanship and advanced engineering.
                 </p>
               </div>
             </ScrollReveal>
@@ -154,13 +208,66 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Owners / Leadership Team */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 lg:px-8">
+          <SectionHeader
+            title="Our Leadership"
+            subtitle="The visionaries and hands-on managers driving KFab Infra's success"
+          />
+
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            {[
+              {
+                name: "Pramod Singh",
+                role: "Founder",
+                image: pramodSinghImg,
+                description: "With over 25 years of hands-on experience in heavy engineering and fabrication, Pramod established KFab Infra in 1998. Under his guidance, a small local workshop evolved into a key manufacturing partner for state-level infrastructure projects. His core philosophy remains centered on precision craftsmanship and honest client relationships."
+              },
+              {
+                name: "Ajeet Singh",
+                role: "Lead Manager",
+                image: ajeetSinghImg,
+                description: "Ajeet leads our shop floor operations and technical design teams. Fusing advanced fabrication techniques with strict safety and quality standards, he manages the execution of complex metro projects, bridge structures, and industrial silos. He ensures every structure built under KFab meets international engineering benchmarks."
+              },
+              {
+                name: "Abhishek Singh",
+                role: "Manager",
+                image: abhishekSinghImg,
+                description: "Abhishek handles project coordination, commercial contracts, and client relations. He ensures seamless communication from initial estimates to final delivery and erection. Abhishek's focus is on scaling operations, modernizing client support, and building long-term vendor partnerships across India's industrial sectors."
+              }
+            ].map((owner, index) => (
+              <ScrollReveal key={index} delay={index * 0.15}>
+                <div className="card-premium p-8 rounded-[24px] text-center flex flex-col h-full items-center">
+                  <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg mb-6 relative">
+                    <img
+                      src={owner.image}
+                      alt={owner.name}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                  <h3 className="text-xl font-serif font-bold text-foreground mb-1">
+                    {owner.name}
+                  </h3>
+                  <div className="text-primary font-semibold text-sm mb-4">
+                    {owner.role}
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {owner.description}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Timeline */}
-      <section className="py-24 bg-charcoal text-creme">
+      <section className="py-24 bg-secondary border-y border-border">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader
             title="Our Journey"
             subtitle="Milestones that define our legacy"
-            light
           />
 
           <div className="relative max-w-4xl mx-auto">
@@ -180,17 +287,17 @@ const AboutPage = () => {
                 >
                   {/* Content */}
                   <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : "md:text-left"} ml-12 md:ml-0`}>
-                    <div className="inline-block px-4 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-2">
+                    <div className="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-2">
                       {milestone.year}
                     </div>
-                    <h3 className="text-xl font-serif font-semibold mb-2">
+                    <h3 className="text-xl font-serif font-bold mb-2 text-foreground">
                       {milestone.title}
                     </h3>
-                    <p className="text-creme/60">{milestone.description}</p>
+                    <p className="text-muted-foreground leading-relaxed">{milestone.description}</p>
                   </div>
 
                   {/* Dot */}
-                  <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-primary border-4 border-charcoal -translate-x-1/2" />
+                  <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-primary border-4 border-secondary -translate-x-1/2" />
 
                   {/* Spacer for desktop */}
                   <div className="hidden md:block flex-1" />
@@ -201,39 +308,70 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Workforce Distribution */}
+      {/* Operational Metrics & Workforce */}
       <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="container mx-auto px-3 md:px-4 lg:px-8">
           <SectionHeader
-            title="Our Workforce"
-            subtitle="8 specialized departments working together"
+            title="Operational Metrics & Workforce"
+            subtitle="A data-driven look at our team composition, project sectors, and production growth"
           />
 
-          <div className="max-w-3xl mx-auto">
-            <StaggerContainer className="space-y-4">
-              {workforceData.map((item, index) => (
-                <StaggerItem key={index}>
-                  <div className="flex items-center gap-4">
-                    <div className="w-24 text-sm font-medium text-foreground">
-                      {item.role}
-                    </div>
-                    <div className="flex-1 h-8 bg-muted rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${item.percentage}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                        className="h-full bg-primary rounded-full flex items-center justify-end pr-3"
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mt-12 max-w-4xl mx-auto">
+            {/* Workforce Donut Chart */}
+            <ScrollReveal>
+              <div className="card-premium p-6 flex flex-col h-[400px] rounded-[24px]">
+                <h3 className="text-lg font-serif font-semibold mb-4 text-center">Workforce Distribution</h3>
+                <div className="flex-1 min-h-0">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <PieChart>
+                      <Pie
+                        data={workforceData}
+                        cx="50%"
+                        cy="45%"
+                        innerRadius={55}
+                        outerRadius={85}
+                        paddingAngle={3}
+                        dataKey="value"
                       >
-                        <span className="text-xs font-medium text-charcoal">
-                          {item.percentage}%
-                        </span>
-                      </motion.div>
-                    </div>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
+                        {workforceData.map((entry, index) => (
+                           <Cell key={`cell-${index}`} fill={entry.color} />
+                        ))}
+                      </Pie>
+                      <Tooltip content={<CustomTooltip />} />
+                      <Legend 
+                        layout="horizontal" 
+                        verticalAlign="bottom" 
+                        align="center"
+                        iconType="circle"
+                        iconSize={6}
+                        wrapperStyle={{ fontSize: '10px', paddingTop: '10px' }}
+                      />
+                    </PieChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Production Growth Bar Chart */}
+            <ScrollReveal delay={0.1}>
+              <div className="card-premium p-6 flex flex-col h-[400px] rounded-[24px]">
+                <h3 className="text-lg font-serif font-semibold mb-4 text-center">Annual Fabrication Output (Tonnes)</h3>
+                <div className="flex-1 min-h-0">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart
+                      data={productionData}
+                      margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
+                    >
+                      <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+                      <XAxis dataKey="year" stroke="#888888" fontSize={10} />
+                      <YAxis stroke="#888888" fontSize={10} />
+                      <Tooltip content={<CustomTooltip />} />
+                      <Bar dataKey="tonnage" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} name="Tonnage" />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -274,17 +412,17 @@ const AboutPage = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: "8", label: "Departments" },
-              { value: "65", label: "HP Power Supply" },
+              { value: "8", label: "Specialized Departments" },
+              { value: "65+", label: "Advanced Equipment" },
               { value: "15,000", label: "Sq Ft Facility" },
-              { value: "20+", label: "Years Experience" },
+              { value: "25+", label: "Years Experience" },
             ].map((stat, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
                 <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-serif font-bold text-charcoal mb-2">
+                  <div className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-charcoal/70">{stat.label}</div>
+                  <div className="text-slate-900/70">{stat.label}</div>
                 </div>
               </ScrollReveal>
             ))}

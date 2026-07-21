@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Shield, Clock, Award, Users, CheckCircle, Wrench } from "lucide-react";
 import SectionHeader from "../SectionHeader";
 import ScrollReveal from "../ScrollReveal";
+import chooseUsImg from "@/assets/hogli.png";
 
 const features = [
   {
@@ -89,16 +90,16 @@ const WhyChooseUs = () => {
           {/* Image */}
           <ScrollReveal direction="right" className="relative">
             <div className="relative">
-              <div className="aspect-square overflow-hidden">
+              <div className="aspect-square overflow-hidden rounded-[24px] shadow-[15px_15px_35px_rgba(0,0,0,0.3)] hover:shadow-[20px_20px_45px_rgba(0,0,0,0.4)] transition-all duration-300">
                 <img
-                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80"
+                  src={chooseUsImg}
                   alt="Quality fabrication process"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
               {/* Decorative Elements */}
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 -z-10" />
-              <div className="absolute -top-6 -right-6 w-32 h-32 border-2 border-primary/30 -z-10" />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-[24px] -z-10" />
+              <div className="absolute -top-6 -right-6 w-32 h-32 border-2 border-primary/30 rounded-[24px] -z-10" />
             </div>
           </ScrollReveal>
         </div>

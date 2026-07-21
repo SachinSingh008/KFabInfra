@@ -1,10 +1,11 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SectionHeader from "@/components/SectionHeader";
 import { StaggerContainer, StaggerItem } from "@/components/StaggerContainer";
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, X } from "lucide-react";
 
 import ciloStool from "@/assets/cilo stool.png";
 import cilo from "@/assets/cilo.jpeg";
@@ -191,20 +192,22 @@ const services = [
 ];
 
 const ServicesPage = () => {
+  const [activeImage, setActiveImage] = useState<{ src: string; title: string } | null>(null);
+
   return (
     <main className="min-h-screen">
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-charcoal text-creme relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      <section className="pt-32 pb-20 bg-secondary text-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-15">
           <img
             src={curveShedImg}
             alt="Hero Background"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-secondary/80 to-secondary" />
         <div className="container mx-auto px-4 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -216,9 +219,9 @@ const ServicesPage = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold mb-6">
               Our
               <br />
-              <span className="gold-text">Fabrication Services</span>
+              <span className="text-primary">Fabrication Services</span>
             </h1>
-            <p className="text-lg text-creme/70 leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Comprehensive heavy fabrication solutions for Sugar, Cement, Paper,
               Chemical & Handling Equipment industries.
             </p>
@@ -237,13 +240,21 @@ const ServicesPage = () => {
                   className="card-premium group h-full overflow-hidden"
                 >
                   {/* Image */}
-                  <div className="relative h-40 overflow-hidden">
+                  <div 
+                    className="relative h-48 overflow-hidden cursor-zoom-in"
+                    onClick={() => setActiveImage({ src: service.image, title: service.title })}
+                  >
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent" />
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300" />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="text-white text-xs font-medium px-3 py-1.5 bg-black/60 rounded-full border border-white/20 backdrop-blur-sm">
+                        Click to Expand
+                      </span>
+                    </div>
                   </div>
 
                   {/* Content */}
@@ -296,6 +307,53 @@ const ServicesPage = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {activeImage && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setActiveImage(null)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            />
+
+            {/* Image Container */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ type: "spring", duration: 0.5 }}
+              className="relative max-w-4xl w-full max-h-[85vh] flex flex-col items-center justify-center z-10"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setActiveImage(null)}
+                className="absolute -top-12 right-0 md:-right-12 p-2 rounded-full bg-black/50 text-white hover:bg-black/80 transition-colors"
+                aria-label="Close image"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
+              <div className="w-full bg-[#12151c] rounded-[24px] overflow-hidden border border-white/10 shadow-2xl p-2 md:p-3">
+                <img
+                  src={activeImage.src}
+                  alt={activeImage.title}
+                  className="w-full h-auto max-h-[70vh] object-contain rounded-[16px] mx-auto"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="text-lg font-serif font-semibold text-white">
+                    {activeImage.title}
+                  </h3>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
       <Footer />
     </main>

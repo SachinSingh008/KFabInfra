@@ -4,6 +4,7 @@ import SectionHeader from "@/components/SectionHeader";
 import ScrollReveal from "@/components/ScrollReveal";
 import { motion } from "framer-motion";
 import { FileSearch, Ruler, Cog, Shield, CheckCircle, Package } from "lucide-react";
+import qualityCheckImg from "@/assets/vsl kattar 2.jpg";
 
 const processSteps = [
   {
@@ -39,12 +40,12 @@ const processSteps = [
 ];
 
 const qualityChecks = [
-  "Raw material verification with mill certificates",
-  "Dimensional inspection at each stage",
-  "Weld quality testing (visual, DP, UT, RT as required)",
-  "Surface treatment and coating inspection",
-  "Final dimensional and functional verification",
-  "Documentation and certification",
+  "Certified raw steel verification with mill-traceability records",
+  "Continuous dimensional alignment checks during fit-up and assembly",
+  "Non-destructive weld testing (visual, dye-penetrant, ultrasonic, radiography)",
+  "Corrosion-resistant sandblasting and protective coat thickness verification",
+  "Final load-bearing structural check and engineering clearance",
+  "Complete QA compilation reports with handover certificates",
 ];
 
 const QualityPage = () => {
@@ -53,15 +54,15 @@ const QualityPage = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-charcoal text-creme relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      <section className="pt-32 pb-20 bg-secondary text-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-15">
           <img
             src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1200&q=80"
             alt=""
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-secondary/80 to-secondary" />
         <div className="container mx-auto px-4 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -73,9 +74,9 @@ const QualityPage = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold mb-6">
               Quality &
               <br />
-              <span className="gold-text">Process Excellence</span>
+              <span className="text-primary">Process Excellence</span>
             </h1>
-            <p className="text-lg text-creme/70 leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Our commitment to quality is embedded in every step of our
               fabrication process, from initial design to final delivery.
             </p>
@@ -142,7 +143,7 @@ const QualityPage = () => {
       </section>
 
       {/* Quality Assurance */}
-      <section className="py-24 bg-charcoal text-creme">
+      <section className="py-24 bg-secondary text-foreground">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
@@ -150,12 +151,13 @@ const QualityPage = () => {
               <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-6">
                 Rigorous
                 <br />
-                <span className="gold-text">Quality Control</span>
+                <span className="text-primary">Quality Control</span>
               </h2>
-              <p className="text-creme/70 leading-relaxed mb-8">
-                Every product undergoes comprehensive quality checks at multiple
-                stages of fabrication. Our quality assurance team ensures
-                adherence to specifications and industry standards.
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                At KFab, our heavy-duty structures are built to bear critical industrial loads. 
+                We implement a hands-on quality workflow at each phase of production, verifying 
+                alignment, welding compliance, and structural integrity so that every sugarcane 
+                vessel, metro girder, and silo exceeds safety requirements.
               </p>
 
               <div className="space-y-4">
@@ -171,7 +173,7 @@ const QualityPage = () => {
                     <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                       <CheckCircle className="w-4 h-4 text-primary" />
                     </div>
-                    <span className="text-creme/80">{check}</span>
+                    <span className="text-foreground/80">{check}</span>
                   </motion.div>
                 ))}
               </div>
@@ -179,14 +181,14 @@ const QualityPage = () => {
 
             <ScrollReveal direction="right">
               <div className="relative">
-                <div className="aspect-square rounded-lg overflow-hidden">
+                <div className="aspect-square rounded-[24px] overflow-hidden border border-border/10 shadow-md">
                   <img
-                    src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80"
-                    alt="Quality inspection"
-                    className="w-full h-full object-cover"
+                    src={qualityCheckImg}
+                    alt="Quality inspection at KFab shop floor"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
-                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/20 rounded-lg -z-10" />
+                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-[24px] -z-10 animate-pulse" />
               </div>
             </ScrollReveal>
           </div>
@@ -194,7 +196,7 @@ const QualityPage = () => {
       </section>
 
       {/* Certifications */}
-      <section className="py-24 bg-secondary">
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader
             title="Standards & Compliance"

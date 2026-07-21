@@ -55,15 +55,15 @@ const ClientsPage = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-charcoal text-creme relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      <section className="pt-32 pb-20 bg-secondary text-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-15">
           <img
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80"
             alt=""
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-secondary/80 to-secondary" />
         <div className="container mx-auto px-4 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -75,9 +75,9 @@ const ClientsPage = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold mb-6">
               Our
               <br />
-              <span className="gold-text">Valued Clients</span>
+              <span className="text-primary">Valued Clients</span>
             </h1>
-            <p className="text-lg text-creme/70 leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Trusted by India's leading industrial organizations for over two decades,
               our partnerships are built on quality, reliability, and mutual success.
             </p>
@@ -104,13 +104,13 @@ const ClientsPage = () => {
                   <img 
                     src={`https://logo.clearbit.com/${client.domain}`} 
                     alt={client.name} 
-                    className="max-h-20 md:max-h-28 max-w-full object-contain transition-all duration-300" 
+                    className="h-24 md:h-32 w-auto object-contain transition-all duration-300" 
                     onError={(e) => { 
                       e.currentTarget.onerror = null; 
                       e.currentTarget.src = `https://www.google.com/s2/favicons?domain=${client.domain}&sz=128`; 
                     }} 
                   />
-                  <span className="text-sm md:text-base font-semibold text-foreground/80 text-center">
+                  <span className="text-sm md:text-base font-bold text-foreground/85 text-center">
                     {client.name}
                   </span>
                 </motion.div>
@@ -121,12 +121,11 @@ const ClientsPage = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-charcoal text-creme">
+      <section className="py-24 bg-secondary text-foreground">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader
             title="What Our Clients Say"
             subtitle="Testimonials from valued partners"
-            light
           />
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -134,17 +133,17 @@ const ClientsPage = () => {
               <ScrollReveal key={index} delay={index * 0.2}>
                 <motion.div
                   whileHover={{ y: -8 }}
-                  className="relative p-8 rounded-lg bg-creme/5 border border-creme/10 h-full"
+                  className="relative p-8 rounded-lg bg-background border border-border/80 shadow-sm h-full"
                 >
                   <Quote className="w-10 h-10 text-primary/30 mb-4" />
-                  <p className="text-creme/80 leading-relaxed mb-6 italic">
+                  <p className="text-muted-foreground leading-relaxed mb-6 italic">
                     "{testimonial.quote}"
                   </p>
                   <div className="mt-auto">
                     <div className="font-serif font-semibold text-primary">
                       {testimonial.author}
                     </div>
-                    <div className="text-sm text-creme/60">
+                    <div className="text-sm text-muted-foreground/80">
                       {testimonial.title}
                     </div>
                   </div>
@@ -167,10 +166,10 @@ const ClientsPage = () => {
             ].map((stat, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
                 <div>
-                  <div className="text-4xl md:text-5xl font-serif font-bold text-charcoal mb-1">
+                  <div className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-charcoal/70">{stat.label}</div>
+                  <div className="text-slate-900/70">{stat.label}</div>
                 </div>
               </ScrollReveal>
             ))}

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Cylinder, Box, Factory, Building, Layers, Hammer, Wrench, LayoutGrid, Plane } from "lucide-react";
@@ -73,8 +72,7 @@ const services = [
 ];
 
 const ServicesPreview = () => {
-  const [showAll, setShowAll] = useState(false);
-  const visibleServices = showAll ? services : services.slice(0, 4);
+  const visibleServices = services.slice(0, 4);
 
   return (
     <section className="py-12 md:py-16 lg:py-24 bg-secondary">
@@ -126,13 +124,13 @@ const ServicesPreview = () => {
           viewport={{ once: true }}
           className="text-center mt-8 md:mt-12"
         >
-          <button 
-            onClick={() => setShowAll(!showAll)}
+          <Link 
+            to="/services"
             className="btn-gold inline-flex items-center gap-2 text-sm md:text-base px-6 md:px-8 py-2.5 md:py-3"
           >
-            <span>{showAll ? "Show Less" : "Show More"}</span>
-            <ArrowRight className={`w-4 h-4 transition-transform ${showAll ? "-rotate-90" : "rotate-90"}`} />
-          </button>
+            <span>Show More</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </motion.div>
       </div>
     </section>
