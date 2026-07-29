@@ -231,37 +231,37 @@ const AboutPage = () => {
                 name: "Pramod Singh",
                 role: "Founder",
                 image: pramodSinghImg,
-                description: "With over 25 years of hands-on experience in heavy engineering and fabrication, Pramod established KFab Infra in 1998. Under his guidance, a small local workshop evolved into a key manufacturing partner for state-level infrastructure projects. His core philosophy remains centered on precision craftsmanship and honest client relationships."
+                description: "Over 25 years of leadership in heavy engineering and structural fabrication, driving KFab Infra's core vision, quality benchmarks, and strategic growth since 1998."
               },
               {
                 name: "Ajeet Singh",
-                role: "Lead Manager",
+                role: "Marketing & Relationship Manager",
                 image: ajeetSinghImg,
-                description: "Ajeet leads our shop floor operations and technical design teams. Fusing advanced fabrication techniques with strict safety and quality standards, he manages the execution of complex metro projects, bridge structures, and industrial silos. He ensures every structure built under KFab meets international engineering benchmarks."
+                description: "Spearheads client acquisitions, key account management, and strategic market expansion for large-scale industrial and infrastructure projects."
               },
               {
                 name: "Abhishek Singh",
-                role: "Accountant Manager",
+                role: "CFO",
                 image: abhishekSinghImg,
-                description: "Abhishek handles project coordination, commercial contracts, and client relations. He ensures seamless communication from initial estimates to final delivery and erection. Abhishek's focus is on scaling operations, modernizing client support, and building long-term vendor partnerships across India's industrial sectors."
+                description: "Manages corporate financial strategy, commercial contracts, budget allocation, and fiscal operations to ensure sustainable enterprise growth."
               },
               {
                 name: "Subhash Kumar",
                 role: "Site Engineer",
                 image: subhashImg,
-                description: "Subhash oversees on-site structural erection, quality compliance, and safety execution across KFab Infra's major bridge, infrastructure, and heavy industrial projects. With extensive field engineering expertise, he coordinates directly with client inspection teams to ensure precise shop fit-ups translate seamlessly into safe, zero-defect installation on site."
+                description: "Oversees on-site structural erection, safety protocols, and precision alignment for heavy bridge and industrial infrastructure projects."
               },
               {
                 name: "Awdesh Kumar",
                 role: "Site Engineer",
                 image: awdeshImg,
-                description: "Awdesh specializes in heavy site assembly, structural alignment, and quality safety protocols for KFab Infra's industrial shed, highway girder, and heavy storage projects. Working closely with structural inspectors and site operations, he ensures on-time execution, robust field assembly, and full structural compliance."
+                description: "Directs field assembly, fit-up inspections, and site compliance to deliver zero-defect installation for high-capacity steel structures."
               },
               {
                 name: "Ritesh Singh",
-                role: "Tech Lead",
+                role: "CTO",
                 image: riteshImg,
-                description: "Ritesh leads the technology and digital transformation initiatives at KFab Infra. With a strong background in engineering and software systems, he bridges the gap between on-ground fabrication expertise and modern tech-driven project management. Ritesh drives process automation, quality tracking, and digital infrastructure to keep KFab at the forefront of industrial innovation."
+                description: "Drives digital transformation, technology integration, and automated project workflows to elevate engineering precision and operational efficiency."
               }
             ].map((owner, index) => (
               <ScrollReveal key={index} delay={index * 0.15}>
