@@ -161,7 +161,7 @@ const Footer = () => {
         onClick={scrollToTop}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white flex items-center justify-center shadow-blue z-40"
+        className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/30 z-40"
         aria-label="Scroll to top"
       >
         <ArrowUp className="w-5 h-5" />

@@ -20,7 +20,6 @@ const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
 const LocationDetail = lazy(() => import("./pages/LocationDetail"));
 const BlogDetail = lazy(() => import("./pages/BlogDetail"));
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
-import StickyCTA from "./components/StickyCTA";
 
 const queryClient = new QueryClient();
 
@@ -33,7 +32,6 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <FloatingWhatsApp />
-          <StickyCTA />
           <Suspense fallback={<div className="flex h-screen items-center justify-center"><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary"></div></div>}>
             <Routes>
               <Route path="/" element={<Index />} />

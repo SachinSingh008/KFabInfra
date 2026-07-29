@@ -14,6 +14,8 @@ import pramodSinghImg from "@/assets/pramod_singh.png";
 import ajeetSinghImg from "@/assets/ajeet_singh.png";
 import abhishekSinghImg from "@/assets/abhishek_singh.png";
 import riteshImg from "@/assets/Ritesh.jpeg";
+import subhashImg from "@/assets/shubhash Kumar.png";
+import awdeshImg from "@/assets/Awdesh Kumar.png";
 import {
   ResponsiveContainer,
   PieChart,
@@ -223,7 +225,7 @@ const AboutPage = () => {
             subtitle="The visionaries and hands-on managers driving KFab Infra's success"
           />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12">
             {[
               {
                 name: "Pramod Singh",
@@ -242,6 +244,18 @@ const AboutPage = () => {
                 role: "Accountant Manager",
                 image: abhishekSinghImg,
                 description: "Abhishek handles project coordination, commercial contracts, and client relations. He ensures seamless communication from initial estimates to final delivery and erection. Abhishek's focus is on scaling operations, modernizing client support, and building long-term vendor partnerships across India's industrial sectors."
+              },
+              {
+                name: "Subhash Kumar",
+                role: "Site Engineer",
+                image: subhashImg,
+                description: "Subhash oversees on-site structural erection, quality compliance, and safety execution across KFab Infra's major bridge, infrastructure, and heavy industrial projects. With extensive field engineering expertise, he coordinates directly with client inspection teams to ensure precise shop fit-ups translate seamlessly into safe, zero-defect installation on site."
+              },
+              {
+                name: "Awdesh Kumar",
+                role: "Site Engineer",
+                image: awdeshImg,
+                description: "Awdesh specializes in heavy site assembly, structural alignment, and quality safety protocols for KFab Infra's industrial shed, highway girder, and heavy storage projects. Working closely with structural inspectors and site operations, he ensures on-time execution, robust field assembly, and full structural compliance."
               },
               {
                 name: "Ritesh Singh",

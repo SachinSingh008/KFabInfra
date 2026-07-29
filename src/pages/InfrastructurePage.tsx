@@ -8,7 +8,7 @@ import { StaggerContainer, StaggerItem } from "@/components/StaggerContainer";
 import { motion } from "framer-motion";
 import { Zap, Users, Ruler, Cog, Gauge, HardHat, MapPin } from "lucide-react";
 import curveShedImg from "@/assets/curve shed.png";
-import railwayGudderAssemblyImg from "@/assets/railway gudder assebly.png";
+import railwayGirderAssemblyImg from "@/assets/railway gudder assebly.png";
 import goliathCraneLegImg from "@/assets/goliath crane leg.jpeg";
 import desielTankFabImg from "@/assets/desiel tank fab.jpeg";
 
@@ -106,7 +106,7 @@ const InfrastructurePage = () => {
                   </div>
                   <div className="aspect-square rounded-[20px] overflow-hidden border border-border/10 shadow-md">
                     <img
-                      src={railwayGudderAssemblyImg}
+                      src={railwayGirderAssemblyImg}
                       alt="Railway Girder Assembly"
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
