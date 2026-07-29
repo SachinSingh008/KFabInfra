@@ -246,6 +246,12 @@ const AboutPage = () => {
                 description: "Manages corporate financial strategy, commercial contracts, budget allocation, and fiscal operations to ensure sustainable enterprise growth."
               },
               {
+                name: "Ritesh Singh",
+                role: "CTO",
+                image: riteshImg,
+                description: "Drives digital transformation, technology integration, and automated project workflows to elevate engineering precision and operational efficiency."
+              },
+              {
                 name: "Subhash Kumar",
                 role: "Site Engineer",
                 image: subhashImg,
@@ -256,12 +262,6 @@ const AboutPage = () => {
                 role: "Site Engineer",
                 image: awdeshImg,
                 description: "Directs field assembly, fit-up inspections, and site compliance to deliver zero-defect installation for high-capacity steel structures."
-              },
-              {
-                name: "Ritesh Singh",
-                role: "CTO",
-                image: riteshImg,
-                description: "Drives digital transformation, technology integration, and automated project workflows to elevate engineering precision and operational efficiency."
               }
             ].map((owner, index) => (
               <ScrollReveal key={index} delay={index * 0.15}>
