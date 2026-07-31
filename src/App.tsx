@@ -20,6 +20,8 @@ const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
 const LocationDetail = lazy(() => import("./pages/LocationDetail"));
 const BlogDetail = lazy(() => import("./pages/BlogDetail"));
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsOfServicePage from "./pages/TermsOfServicePage";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +48,8 @@ const App = () => (
               <Route path="/services/:slug" element={<ServiceDetail />} />
               <Route path="/location/:slug" element={<LocationDetail />} />
               <Route path="/blog/:slug" element={<BlogDetail />} />
+              <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms" element={<TermsOfServicePage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
