@@ -14,6 +14,7 @@ import pramodSinghImg from "@/assets/pramod_singh.png";
 import ajeetSinghImg from "@/assets/ajeet_singh.png";
 import abhishekSinghImg from "@/assets/abhishek_singh.png";
 import riteshImg from "@/assets/Ritesh.jpeg";
+import OrgChart from "@/components/OrgChart";
 import subhashImg from "@/assets/shubhash Kumar.png";
 import awdeshImg from "@/assets/Awdesh Kumar.png";
 import {
@@ -229,39 +230,39 @@ const AboutPage = () => {
             {[
               {
                 name: "Pramod Singh",
-                role: "Founder",
+                role: "Founder & Managing Director",
                 image: pramodSinghImg,
                 description: "Over 25 years of leadership in heavy engineering and structural fabrication, driving KFab Infra's core vision, quality benchmarks, and strategic growth since 1998."
               },
               {
                 name: "Ajeet Singh",
-                role: "Marketing & Relationship Manager",
+                role: "Director – Business Development",
                 image: ajeetSinghImg,
-                description: "Spearheads client acquisitions, key account management, and strategic market expansion for large-scale industrial and infrastructure projects."
+                description: "Spearheads commercial operations, client acquisitions, key account management, and strategic tendering for EPC & heavy industrial projects."
               },
               {
                 name: "Abhishek Singh",
-                role: "CFO",
+                role: "Director – Finance & Administration",
                 image: abhishekSinghImg,
-                description: "Manages corporate financial strategy, commercial contracts, budget allocation, and fiscal operations to ensure sustainable enterprise growth."
+                description: "Directs corporate financial strategy, commercial contracts, budget allocation, administrative compliance, and fiscal risk governance."
               },
               {
                 name: "Ritesh Singh",
-                role: "CTO",
+                role: "Director – Engineering & Projects",
                 image: riteshImg,
-                description: "Drives digital transformation, technology integration, and automated project workflows to elevate engineering precision and operational efficiency."
+                description: "Directs project engineering, planning & scheduling, technical documentation, CAD/CAM integration, and engineering execution workflows."
               },
               {
                 name: "Subhash Kumar",
-                role: "Site Engineer",
+                role: "Resident Site Engineer",
                 image: subhashImg,
-                description: "Oversees on-site structural erection, safety protocols, and precision alignment for heavy bridge and industrial infrastructure projects."
+                description: "Oversees on-site structural erection, alignment tolerances, and safety compliance at the Hubli project site location."
               },
               {
                 name: "Awdesh Kumar",
-                role: "Site Engineer",
+                role: "Resident Site Engineer",
                 image: awdeshImg,
-                description: "Directs field assembly, fit-up inspections, and site compliance to deliver zero-defect installation for high-capacity steel structures."
+                description: "Directs field assembly, fit-up inspections, QA/QC site compliance, and erection execution at the Bhilai project site location."
               }
             ].map((owner, index) => (
               <ScrollReveal key={index} delay={index * 0.15}>
@@ -285,6 +286,11 @@ const AboutPage = () => {
                 </div>
               </ScrollReveal>
             ))}
+          </div>
+
+          {/* Interactive Organizational Structure Diagram */}
+          <div className="mt-16">
+            <OrgChart />
           </div>
         </div>
       </section>
