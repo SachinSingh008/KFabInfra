@@ -100,35 +100,30 @@ const Footer = () => {
               Services
             </h4>
             <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-white/80 hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+              <li><Link to="/services/heavy-steel-fabrication" className="text-white/80 hover:text-primary transition-colors">Heavy Steel Fabrication</Link></li>
+              <li><Link to="/services/structural-steel" className="text-white/80 hover:text-primary transition-colors">Structural Steel</Link></li>
+              <li><Link to="/services/peb-structures" className="text-white/80 hover:text-primary transition-colors">PEB Structures</Link></li>
+              <li><Link to="/services/industrial-shed-fabrication" className="text-white/80 hover:text-primary transition-colors">Industrial Sheds</Link></li>
+              <li><Link to="/services/industrial-piping" className="text-white/80 hover:text-primary transition-colors">Process Piping</Link></li>
+              <li><Link to="/services/turnkey-industrial-projects" className="text-white/80 hover:text-primary transition-colors">Turnkey EPC Projects</Link></li>
             </ul>
           </div>
 
-          {/* Industries */}
+          {/* Location Hubs SEO */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-primary mb-6">
-              Industries
+              Location Hubs
             </h4>
-            <ul className="space-y-3">
-              {footerLinks.industries.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-white/80 hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+            <ul className="space-y-2 text-sm">
+              <li><Link to="/location/fabrication-chakan" className="text-white/80 hover:text-primary transition-colors">Fabrication Chakan</Link></li>
+              <li><Link to="/location/fabrication-bhosari" className="text-white/80 hover:text-primary transition-colors">Fabrication Bhosari</Link></li>
+              <li><Link to="/location/fabrication-pcmc" className="text-white/80 hover:text-primary transition-colors">Fabrication PCMC</Link></li>
+              <li><Link to="/location/fabrication-talegaon" className="text-white/80 hover:text-primary transition-colors">Fabrication Talegaon</Link></li>
+              <li><Link to="/location/fabrication-ranjangaon" className="text-white/80 hover:text-primary transition-colors">Fabrication Ranjangaon</Link></li>
+              <li><Link to="/location/peb-contractor-pune" className="text-white/80 hover:text-primary transition-colors">PEB Contractor Pune</Link></li>
+              <li><Link to="/location/industrial-shed-contractor-pune" className="text-white/80 hover:text-primary transition-colors">Industrial Shed Pune</Link></li>
+              <li><Link to="/location/fabrication-job-work-pune" className="text-white/80 hover:text-primary transition-colors">Job Work Subcontractor</Link></li>
+              <li><Link to="/location/industrial-maintenance-pune" className="text-white/80 hover:text-primary transition-colors">Plant Shutdown Repairs</Link></li>
             </ul>
           </div>
         </div>
