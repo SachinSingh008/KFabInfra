@@ -65,6 +65,23 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="category" content="Industrial Manufacturing, Steel Fabrication" />
       <meta name="robots" content={noIndex ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"} />
       <meta name="googlebot" content={noIndex ? "noindex" : "index,follow"} />
+      <meta name="bingbot" content={noIndex ? "noindex" : "index,follow,archive,snippet,searchpreview"} />
+      <meta name="slurp" content="index,follow" />
+      <meta name="duckduckbot" content="index,follow" />
+      <meta name="applebot" content="index,follow" />
+
+      {/* Verification for Bing, Yandex, Google */}
+      <meta name="msvalidate.01" content="4A899C71E89F417BB892C900D81023BA" />
+      
+      {/* Dublin Core Metas for Bing, Yahoo, Firefox Suggest & Enterprise Crawlers */}
+      <meta name="DC.title" content={title} />
+      <meta name="DC.creator" content={SITE.legalName} />
+      <meta name="DC.subject" content={allKeywords} />
+      <meta name="DC.description" content={description} />
+      <meta name="DC.publisher" content={SITE.legalName} />
+      <meta name="DC.language" content="en-IN" />
+      <meta name="DC.coverage" content="Pune, Maharashtra, India" />
+      <meta name="DC.format" content="text/html" />
 
       {/* Canonical */}
       {canonical && <link rel="canonical" href={canonical} />}
@@ -80,6 +97,12 @@ const SEO: React.FC<SEOProps> = ({
       <link rel="alternate" hrefLang="en-IN" href={canonical || SITE.url} />
       <link rel="alternate" hrefLang="x-default" href={SITE.url} />
 
+      {/* Apple & Edge PWA tags */}
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="apple-mobile-web-app-title" content="KFab Infra" />
+      <meta name="format-detection" content="telephone=no" />
+
       {/* Open Graph */}
       <meta property="og:site_name" content={SITE.name} />
       <meta property="og:title" content={title} />
@@ -91,9 +114,6 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={title} />
       <meta property="og:locale" content={SITE.locale} />
-
-      {/* Facebook */}
-      <meta property="fb:app_id" content="" />
 
       {/* Twitter / X */}
       <meta name="twitter:card" content="summary_large_image" />

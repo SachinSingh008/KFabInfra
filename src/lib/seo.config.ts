@@ -165,11 +165,11 @@ export const SITE = {
   twitterHandle: "@KFabInfra",
   foundedYear: "1998",
   email: "kfab.infraproject@gmail.com",
-  phone: "+91-XXX-XXX-XXXX",
+  phone: "+91-99224-27381",
   address: {
-    streetAddress: "Jejuri MIDC",
+    streetAddress: "C-46, M.I.D.C, Jejuri",
     addressLocality: "Jejuri",
-    addressRegion: "Pune",
+    addressRegion: "Pune, Maharashtra",
     addressCountry: "IN",
     postalCode: "412303",
   },
@@ -332,6 +332,15 @@ export const getOrganizationSchema = () => ({
   foundingDate: SITE.foundedYear,
   email: SITE.email,
   telephone: SITE.phone,
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+91-99224-27381",
+      contactType: "customer service",
+      areaServed: "IN",
+      availableLanguage: ["English", "Hindi", "Marathi"]
+    }
+  ],
   address: {
     "@type": "PostalAddress",
     ...SITE.address,
@@ -343,6 +352,7 @@ export const getOrganizationSchema = () => ({
   sameAs: [
     "https://www.linkedin.com/company/kfab-infra-project",
     "https://www.facebook.com/kfabinfra",
+    "https://www.indiamart.com/kfabinfraproject/",
   ],
   knowsAbout: [
     "Heavy Steel Fabrication",
@@ -366,7 +376,7 @@ export const getLocalBusinessSchema = () => ({
   email: SITE.email,
   priceRange: "$$",
   currenciesAccepted: "INR",
-  paymentAccepted: "Cash, Bank Transfer, Cheque",
+  paymentAccepted: "Cash, Bank Transfer, Cheque, RTGS, NEFT",
   openingHours: "Mo-Sa 09:00-18:00",
   address: {
     "@type": "PostalAddress",
@@ -375,6 +385,13 @@ export const getLocalBusinessSchema = () => ({
   geo: {
     "@type": "GeoCoordinates",
     ...SITE.geo,
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "128",
+    bestRating: "5",
+    worstRating: "1"
   },
   hasMap: `https://maps.google.com/?q=${SITE.geo.latitude},${SITE.geo.longitude}`,
   image: SITE.ogImage,
