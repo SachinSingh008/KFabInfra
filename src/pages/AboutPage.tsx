@@ -37,7 +37,7 @@ const milestones = [
   { year: "1998", title: "Foundation", description: "KFab Infra Project PVT LTD established in Jejuri, Pune" },
   { year: "2005", title: "Expansion", description: "Doubled capacity with new machinery" },
   { year: "2012", title: "Major Projects", description: "Started serving metro & railway sectors" },
-  { year: "2018", title: "Milestone", description: "Completed 300+ industrial projects" },
+  { year: "2018", title: "Milestone", description: "Completed 1000+ industrial projects" },
   { year: "2024", title: "25+ Years", description: "Celebrating over a quarter century of excellence" },
 ];
 
@@ -66,6 +66,7 @@ const productionData = [
   { year: "2022", tonnage: 90 },
   { year: "2023", tonnage: 115 },
   { year: "2024", tonnage: 130 },
+  { year: "2025", tonnage: 150 },
 ];
 
 const CustomTooltip = ({ active, payload, label }: any) => {
