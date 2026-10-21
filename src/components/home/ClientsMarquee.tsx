@@ -4,6 +4,7 @@ import wmiLogo from "@/assets/wmi_cranes_logo.png";
 import towellLogo from "@/assets/towell_engineering_logo.png";
 import bhelLogo from "@/assets/bhel_logo.png";
 import siscolLogo from "@/assets/siscol_logo.png";
+import lntLogo from "@/assets/LNT.webp";
 
 interface Client {
   name: string;
@@ -17,7 +18,7 @@ const clients: Client[] = [
   { name: "Siscol", domain: "siscol.com", logo: siscolLogo },
   { name: "BHEL", domain: "bhel.com", logo: bhelLogo },
   { name: "TOWELL Engineering Int. LLP", domain: "towellengineering.com", logo: towellLogo },
-  { name: "L&T", domain: "larsentoubro.com", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Larsen%26Toubro_logo.svg", scaleUp: true },
+  { name: "L&T", domain: "larsentoubro.com", logo: lntLogo, scaleUp: true },
   { name: "Wheels India", domain: "wheelsindia.com", scaleUp: true },
   { name: "Crossworld Industries", domain: "crossworldindustries.com", scaleUp: true },
   { name: "Consolidated Hoist Pvt. Ltd.", domain: "consolidatedswift.com", scaleUp: true },

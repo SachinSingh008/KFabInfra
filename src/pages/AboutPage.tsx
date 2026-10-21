@@ -13,7 +13,7 @@ import metroGiderImg from "@/assets/metro gider.png";
 import pramodSinghImg from "@/assets/pramod_singh.png";
 import ajeetSinghImg from "@/assets/ajeet_singh.png";
 import abhishekSinghImg from "@/assets/abhishek_singh.png";
-import riteshImg from "@/assets/Ritesh.jpeg";
+import riteshImg from "@/assets/Ritesh Singh.jpg";
 import OrgChart from "@/components/OrgChart";
 import subhashImg from "@/assets/shubhash Kumar.png";
 import awdeshImg from "@/assets/Awdesh Kumar.png";
